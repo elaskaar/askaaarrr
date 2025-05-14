@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم دوله  اليوفي للبيتزا والمشروبات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>اليوفي</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="#menu"><i class="fas fa-book-open"></i> القائمة</a>
+                <a href="#about"><i class="fas fa-info-circle"></i> عنا</a>
+                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+            <a href="#contact" class="contact-btn">
+                <i class="fas fa-phone"></i>
+                <span>اتصل بنا</span>
+            </a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>مطعم دوله اليوفي</h1>
+            <h3 class="owner-name">Ownar Ayman</h3>
+            <p class="hero-subtitle">أشهى المشروبات والمأكولات</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="hero-btn primary">
+                    <i class="fas fa-book-open"></i>
+                    استعرض القائمة
+                    <small class="slogan">الي مجربش لسا ميعرفش</small>
+                </a>
+                <a href="#contact" class="hero-btn secondary">
+                    <i class="fas fa-phone"></i>
+                    اتصل بنا
+                    <small class="phone-number">01003410708</small>
+                </a>
+            </div>
+            <div class="hero-features">
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    متاحين يومياً
+                </div>
+                <div class="feature">
+                    <i class="fas fa-motorcycle"></i>
+                    خدمة توصيل
+                </div>
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    جودة عالية
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>قائمة الطعام</h2>
+        
+        <div class="menu-images">
+            <div class="menu-image-item">
+                <img src="بيتزا/منيو اكل 1.jpg" alt="قائمة الطعام" class="menu-card">
+                <h3>قائمة الطعام الرئيسية</h3>
+            </div>
+            <div class="menu-image-item">
+                <img src="بيتزا/منيو مكرونات وصوص.jpg" alt="قائمة المكرونات والصوص" class="menu-card">
+                <h3>المكرونات والصوص</h3>
+            </div>
+            <div class="menu-image-item menu-drinks-hot">
+                <img src="بيتزا/منيو مشروبات ساخنة.jpg" alt="قائمة المشروبات الساخنة" class="menu-card">
+                <div class="menu-icon">
+                    <i class="fas fa-mug-hot fa-3x"></i>
+                </div>
+                <h3>المشروبات الساخنة</h3>
+            </div>
+            <div class="menu-image-item menu-drinks-cold">
+                <img src="بيتزا/منيو مشروبات عصائر.jpg" alt="قائمة العصائر" class="menu-card">
+                <div class="menu-icon">
+                    <i class="fas fa-glass-whiskey fa-3x"></i>
+                </div>
+                <h3>العصائر الفريش</h3>
+            </div>
+        </div>
+
+        <div class="featured-items">
+            <div class="section-header">
+                <h2>الأكثر طلباً</h2>
+                <p class="section-subtitle">أشهى الأصناف المميزة لدينا والمفضلة لدى زبائننا</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item special">
+                    <img src="بيتزا/تشكن-رانش.jpg" alt="بيتزا تشكن رانش">
+                    <h4>بيتزا تشكن رانش</h4>
+                    <p class="description">بيتزا بصلصة الرانش والدجاج المتبل مع الفلفل الملون وجبنة الموتزاريلا</p>
+                    <div class="pizza-sizes">
+                        <button class="size-btn" data-size="small">صغير - 80 ج.م</button>
+                        <button class="size-btn" data-size="medium">وسط - 110 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 130 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <span class="badge">الأكثر طلباً</span>
+                </div>
+
+                <div class="menu-item special">
+                    <img src="بيتزا/بسطرمة-كيري.jpg" alt="بيتزا بسطرمة كيري">
+                    <h4>بيتزا بسطرمة كيري</h4>
+                    <p class="description">بيتزا بجبنة الكيري والبسطرمة البلدي مع الفلفل الأخضر</p>
+                    <div class="pizza-sizes">
+                        <button class="size-btn" data-size="small">صغير - 90 ج.م</button>
+                        <button class="size-btn" data-size="medium">وسط - 120 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 140 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <span class="badge">الأكثر طلباً</span>
+                </div>
+
+                <div class="menu-item special">
+                    <img src="بيتزا/مكرونة-ميكس.jpg" alt="مكرونة ميكس جبن">
+                    <h4>مكرونة ميكس جبن</h4>
+                    <p class="description">مكرونة بخلطة الجبن المميزة (موتزاريلا، رومي، شيدر)</p>
+                    <div class="topping-options">
+                        <button class="topping-btn" data-topping="cheese"><i class="fas fa-cheese opacity-50"></i> بدون وش جبنة - 90 ج.م</button>
+                        <button class="topping-btn" data-topping="extra-cheese"><i class="fas fa-cheese"></i> مع وش جبنة - 105 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <span class="badge">الأكثر طلباً</span>
+                </div>
+
+                <div class="menu-item special">
+                    <img src="بيتزا/مكرونة-سدق.jpg" alt="مكرونة سدق">
+                    <h4>مكرونة سدق</h4>
+                    <p class="description">مكرونة بصوص الطماطم والسدق البلدي مع الجبنة الموتزاريلا</p>
+                    <div class="topping-options">
+                        <button class="topping-btn" data-topping="cheese"><i class="fas fa-cheese opacity-50"></i> بدون وش جبنة - 100 ج.م</button>
+                        <button class="topping-btn" data-topping="extra-cheese"><i class="fas fa-cheese"></i> مع وش جبنة - 115 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <span class="badge">الأكثر طلباً</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pizza" class="menu">
+        <h2>قائمة البيتزا</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا مارجريتا</h4>
+                <p class="description">صلصة طماطم، جبنة موزاريلا، ريحان طازج</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="small">صغير - 70 ج.م</button>
+                    <button class="size-btn" data-size="medium">وسط - 90 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 110 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا1.jpg" alt="بيتزا">
+                <h4>بيتزا خضار مشكل</h4>
+                <p class="description">فلفل، زيتون، فطر، بصل، طماطم</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="small">صغير - 75 ج.م</button>
+                    <button class="size-btn" data-size="medium">وسط - 95 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 115 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا سوبر سوبريم</h4>
+                <p class="description">لحم مفروم، بيبروني، فلفل، زيتون، فطر</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="small">صغير - 85 ج.م</button>
+                    <button class="size-btn" data-size="medium">وسط - 105 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 125 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="drinks" class="menu">
+        <h2>تحب تشرب ايه؟</h2>
+        <!-- Hot Drinks Section -->
+        <h3 class="section-title">المشروبات الساخنة</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="بيتزا/قهوة-تركي.jpg" alt="قهوة تركي">
+                <h4>قهوة تركي</h4>
+                <p class="description">قهوة تركي محضرة على الرمل بنكهة غنية</p>
+                <div class="price">15 ج.م</div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+            <div class="menu-item">
+                <img src="بيتزا/نسكافيه.jpg" alt="نسكافيه">
+                <h4>نسكافيه</h4>
+                <p class="description">نسكافيه كلاسيك مع رغوة كريمية</p>
+                <div class="price">20 ج.م</div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+            <div class="menu-item">
+                <img src="بيتزا/شاي.jpg" alt="شاي">
+                <h4>شاي</h4>
+                <p class="description">شاي مصري أصيل</p>
+                <div class="price">10 ج.م</div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+        </div>
+
+        <!-- Fresh Drinks Section -->
+        <h3 class="section-title">العصائر الفريش</h3>
+        <div class="menu-grid">
+            <div class="menu-item" data-drink="orange">
+                <img src="بيتزا/برتقال.jpg" alt="عصير برتقال">
+                <h4>عصير برتقال</h4>
+                <p class="description">عصير برتقال طبيعي 100٪</p>
+                <div class="price">25 ج.م</div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+            <div class="menu-item" data-drink="mango">
+                <img src="بيتزا/مانجو.jpg" alt="عصير مانجو">
+                <h4>عصير مانجو</h4>
+                <p class="description">عصير مانجو طبيعي</p>
+                <div class="price">30 ج.م</div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+            <div class="menu-item" data-drink="strawberry">
+                <img src="بيتزا/فراولة.jpg" alt="عصير فراولة">
+                <h4>عصير فراولة</h4>
+                <p class="description">عصير فراولة طازج</p>
+                <div class="price">25 ج.م</div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+            <div class="menu-item" data-drink="lemon">
+                <img src="بيتزا/ليمون.jpg" alt="عصير ليمون">
+                <h4>عصير ليمون</h4>
+                <p class="description">عصير ليمون منعش</p>
+                <div class="price">20 ج.م</div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+        </div>
+
+        <div class="drinks-container">
+            <h3 class="drinks-section-title">المشروبات الساخنة</h3>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="بيتزا/قهوة-تركي.jpg" alt="قهوة تركي">
+                    <h4>قهوة تركي</h4>
+                    <p class="description">قهوة تركي أصيلة بنكهة مميزة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 10 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 15 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="بيتزا/نسكافيه.jpg" alt="نسكافيه">
+                    <h4>نسكافيه</h4>
+                    <p class="description">نسكافيه غني بالنكهة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 12 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 18 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="بيتزا/شاي.jpg" alt="شاي">
+                    <h4>شاي</h4>
+                    <p class="description">شاي مصري أصيل بالنعناع الطازج</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 8 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 12 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="بيتزا/كابتشينو.jpg" alt="كابتشينو">
+                    <h4>كابتشينو</h4>
+                    <p class="description">قهوة إسبريسو مع حليب مبخر ورغوة كريمية</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 20 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 25 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="بيتزا/هوت-تشوكليت.jpg" alt="هوت تشوكليت">
+                    <h4>هوت تشوكليت</h4>
+                    <p class="description">شوكولاتة ساخنة مع الكريمة والمارشميلو</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 22 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 28 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="بيتزا/لاتيه.jpg" alt="لاتيه">
+                    <h4>لاتيه</h4>
+                    <p class="description">قهوة ممزوجة بالحليب الساخن ورغوة كريمية</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 18 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 23 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+
+            <h3 class="drinks-section-title">العصائر الطازجة</h3>
+            <div class="menu-grid">
+                <div class="menu-item" data-drink="orange">
+                    <img src="بيتزا/برتقال.jpg" alt="عصير برتقال">
+                    <h4>عصير برتقال</h4>
+                    <p class="description">عصير برتقال طازج 100%</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 20 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 25 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="mango">
+                    <img src="بيتزا/مانجو.jpg" alt="عصير مانجو">
+                    <h4>عصير مانجو</h4>
+                    <p class="description">عصير مانجو طبيعي 100%</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 22 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 28 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="strawberry">
+                    <img src="بيتزا/فراولة.jpg" alt="عصير فراولة">
+                    <h4>عصير فراولة</h4>
+                    <p class="description">عصير فراولة طازج مع الحليب</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 25 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 30 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="milkshake-chocolate">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك شوكولاتة">
+                    <h4>ميلك شيك شوكولاتة</h4>
+                    <p class="description">حليب مع آيس كريم ونيوتيلا</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 30 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 35 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="milkshake-vanilla">
+                    <img src="بيتزا/ميلك-شيك-فانيليا.jpg" alt="ميلك شيك فانيليا">
+                    <h4>ميلك شيك فانيليا</h4>
+                    <p class="description">حليب مع آيس كريم فانيليا وصوص جوز الهند</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 28 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 33 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="lemonade">
+                    <img src="بيتزا/ليموناضة.jpg" alt="ليموناضة">
+                    <h4>ليموناضة منعشة</h4>
+                    <p class="description">ليمون طازج مع النعناع</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="small">صغير - 15 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 20 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+
+            <h3 class="drinks-section-title">المشروبات الغازية</h3>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h4>كوكاكولا</h4>
+                    <p class="description">كوكاكولا منعشة وباردة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
+                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <h4>سبرايت</h4>
+                    <p class="description">سبرايت منعش وبارد</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
+                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <h4>فانتا برتقال</h4>
+                    <p class="description">فانتا بنكهة البرتقال المنعشة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
+                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <h4>ميرندا</h4>
+                    <p class="description">ميرندا بنكهة التفاح المنعشة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
+                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item">
+                    <h4>7-Up</h4>
+                    <p class="description">سفن اب منعش وبارد</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
+                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+        </div>
+            <div class="menu-grid hot-drinks">
+                <div class="menu-item">
+                    <img src="بيتزا/قهوة-تركي.jpg" alt="قهوة تركي">
+                    <h4>قهوة تركي</h4>
+                    <p class="description">قهوة تركية أصيلة محضرة على الرمل</p>
+                </div>
+                <div class="menu-item" data-drink="coffee">
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format" alt="كابتشينو">
+                    <h4>كابتشينو</h4>
+                    <p class="description">إسبريسو مع حليب مبخر ورغوه كريمية</p>
+                </div>
+                <div class="menu-item" data-drink="coffee">
+                    <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500&auto=format" alt="لاتيه">
+                    <h4>لاتيه</h4>
+                    <p class="description"> إسبريسو مع حليب مبخر وطبقة رغوة خفيفة</p>
+                </div>
+                <div class="menu-item" data-drink="tea">
+                    <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&auto=format" alt="شاي مصري">
+                    <h4>شاي مصري</h4>
+                    <p class="description">شاي مصري أصيل بالنعناع الطازج</p>
+                </div>
+            </div>
+
+            <h3 class="drinks-section-title">العصائر والمشروبات الباردة</h3>
+            <div class="menu-grid cold-drinks">
+                <div class="menu-item" data-drink="orange">
+                    <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500&auto=format" alt="عصير برتقال">
+                    <h4>عصير برتقال طازج</h4>
+                    <p class="description">عصير برتقال طبيعي 100٪</p>
+                </div>
+                <div class="menu-item" data-drink="mango">
+                    <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&auto=format" alt="عصير مانجو">
+                    <h4>عصير مانجو</h4>
+                    <p class="description">عصير مانجو طبيعي مع </p>
+                </div>
+                <div class="menu-item" data-drink="strawberry">
+                    <img src="https://images.unsplash.com/photo-1553530979-7ee52a2670c4?w=500&auto=format" alt="عصير فراولة">
+                    <h4>عصير فراولة</h4>
+                    <p class="description">عصير فراولة طازج مع الحليب</p>
+                </div>
+                <div class="menu-item" data-drink="lemonade">
+                    <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=500&auto=format" alt="ليموناضة">
+                    <h4>ليموناضة منعشة</h4>
+                    <p class="description">ليمون طازج مع النعناع والسكر</p>
+                </div>
+                <div class="menu-item" data-drink="chocolate">
+                    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&auto=format" alt="ميلك شيك شوكولاتة">
+                    <h4>ميلك شيك شوكولاتة</h4>
+                    <p class="description">حليب مع ايس كريم مع نيوتيلا </p>
+                </div>
+                <div class="menu-item" data-drink="vanilla">
+                    <img src="https://images.unsplash.com/photo-1568901839119-631418a3910d?w=500&auto=format" alt="ميلك شيك فانيليا">
+                    <h4>ميلك شيك فانيليا</h4>
+                    <p class="description">حليب ع ايس كريم فانيليا و ص جوز هند</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>عن مطعم اليوفي </h2>
+        <h3>Ownar Ayman</h3>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="بيتزا/بيتزا.jpg" alt="مطعم اليوفي">
+            </div>
+            <div class="about-text">
+                <h3>مرحباً بكم في مطعم اليوفي</h3>
+                <p>نحن نقدم أشهى المأكولات والمشروبات في برج العرب الجديدة. منذ افتتاحنا، ونحن نسعى لتقديم تجربة طعام فريدة تجمع بين الجودة العالية والنكهات الشهية والخدمة المميزه شعارنا هو الي مجربش لسا ميعرفش ..</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-pizza-slice"></i>
+                        <h4>مكونات طازجة</h4>
+                        <p>نستخدم أجود المكونات الطازجة يومياً</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-motorcycle"></i>
+                        <h4>توصيل سريع</h4>
+                        <p>خدمة توصيل سريعة لجميع المناطق</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <h4>خدمة 18 ساعة</h4>
+                        <p>نعمل يومياً من 10 ص إلى 4 ص</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-smile"></i>
+                        <h4>خدمة مميزة</h4>
+                        <p>فريق عمل محترف لخدمتكم</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>اتصل بنا</h2>
+        <div class="contact-info">
+            <div>
+                <i class="fas fa-phone"></i>
+                <p>01003410708</p>
+            </div>
+            <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>العنوان: برج العرب الجديده، الحي السكني الاول، ميجا مول مقابل كانديلا</p>
+            </div>
+            <div>
+                <i class="fas fa-clock"></i>
+                <p>مواعيد العمل: 10 صباحاً - 4 صباحاً</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-icon" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="social-icon" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p>جميع الحقوق محفوظة © 2025 مطعم اليوفي للبيتزا والمشروبات</p>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="العودة إلى الأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Modal for image viewing -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img id="modalImage" class="modal-content">
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>سلة المشتريات</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <h3>المجموع: <span id="totalPrice">0</span> ج.م</h3>
+            </div>
+            <button id="whatsappOrder" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> اطلب عبر الواتساب
+            </button>
+        </div>
+    </div>
+
+    <a href="https://wa.me/201003410708" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
