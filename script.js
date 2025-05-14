@@ -1,12 +1,40 @@
+// Scroll Variables
+let lastScrollTop = 0;
+const header = document.querySelector('header');
+const delta = 5;
+const navbarHeight = header.offsetHeight;
+
 // Back to top button functionality
 const backToTopButton = document.querySelector('.back-to-top');
 
-window.addEventListener('scroll', () => {
+// Handle scroll events for header and back to top button
+window.addEventListener('scroll', function() {
+    // Back to top button logic
     if (window.scrollY > 300) {
         backToTopButton.classList.add('visible');
     } else {
         backToTopButton.classList.remove('visible');
     }
+
+    // Header scroll logic
+    const st = window.pageYOffset;
+
+    // Make sure they scroll more than delta
+    if (Math.abs(lastScrollTop - st) <= delta) return;
+
+    // If scrolled down and are past the navbar, add class nav-up
+    if (st > lastScrollTop && st > navbarHeight) {
+        // Scroll Down
+        header.style.transform = 'translateY(-100%)';
+    } else {
+        // Scroll Up
+        if (st + window.innerHeight < document.documentElement.scrollHeight) {
+            header.style.transform = 'translateY(0)';
+            header.style.backgroundColor = st > 50 ? 'rgba(0, 0, 0, 0.98)' : 'transparent';
+        }
+    }
+
+    lastScrollTop = st;
 });
 
 backToTopButton.addEventListener('click', (e) => {
