@@ -1,40 +1,12 @@
-// Scroll Variables
-let lastScrollTop = 0;
-const header = document.querySelector('header');
-const delta = 5;
-const navbarHeight = header.offsetHeight;
-
 // Back to top button functionality
 const backToTopButton = document.querySelector('.back-to-top');
 
-// Handle scroll events for header and back to top button
-window.addEventListener('scroll', function() {
-    // Back to top button logic
+window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
         backToTopButton.classList.add('visible');
     } else {
         backToTopButton.classList.remove('visible');
     }
-
-    // Header scroll logic
-    const st = window.pageYOffset;
-
-    // Make sure they scroll more than delta
-    if (Math.abs(lastScrollTop - st) <= delta) return;
-
-    // If scrolled down and are past the navbar, add class nav-up
-    if (st > lastScrollTop && st > navbarHeight) {
-        // Scroll Down
-        header.style.transform = 'translateY(-100%)';
-    } else {
-        // Scroll Up
-        if (st + window.innerHeight < document.documentElement.scrollHeight) {
-            header.style.transform = 'translateY(0)';
-            header.style.backgroundColor = st > 50 ? 'rgba(0, 0, 0, 0.98)' : 'transparent';
-        }
-    }
-
-    lastScrollTop = st;
 });
 
 backToTopButton.addEventListener('click', (e) => {
@@ -56,12 +28,22 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    // تفعيل القائمة المتحركة
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.querySelector('i').classList.toggle('fa-bars');
+        menuToggle.querySelector('i').classList.toggle('fa-times');
+    });
+
     // تفعيل جميع الروابط للتمرير السلس
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return; // تجاهل الروابط التي تشير إلى #
+            if (targetId === '#') return;
 
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
@@ -75,13 +57,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     block: 'start'
                 });
 
-                // إذا كان هناك قائمة منسدلة مفتوحة، أغلقها
-                const nav = document.querySelector('nav');
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
+                // إغلاق القائمة المتحركة عند النقر على رابط
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
                 }
             }
         });
+    });
+
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && 
+            !e.target.closest('.nav-links') && 
+            !e.target.closest('.menu-toggle') && 
+            navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+        }
     });
 });
 
@@ -143,20 +138,40 @@ const closeCartModal = cartModal.querySelector('.close-modal');
 document.querySelectorAll('.add-to-cart-btn').forEach(button => {
     button.addEventListener('click', function() {
         const menuItem = this.closest('.menu-item');
+        const name = menuItem.querySelector('h4').textContent;
         const selectedSize = menuItem.querySelector('.size-btn.selected');
         
         if (!selectedSize) {
-            alert('الرجاء اختيار الحجم أولاً');
+            alert('الرجاء اختيار الحجم');
             return;
         }
-
-        const name = menuItem.querySelector('h4').textContent;
-        const size = selectedSize.dataset.size;
+        
+        const size = selectedSize.getAttribute('data-size');
         const price = parseInt(selectedSize.textContent.match(/\d+/)[0]);
-
-        cart.push({ name, size, price });
+        
+        // Check if this is a custom flavor item
+        const flavorInput = menuItem.querySelector('.flavor-input');
+        let customFlavor = '';
+        
+        if (flavorInput) {
+            customFlavor = flavorInput.value.trim();
+            if (customFlavor === '') {
+                alert('الرجاء كتابة الطعم المطلوب');
+                return;
+            }
+        }
+        
+        cart.push({ name, size, price, customFlavor });
         updateCart();
-
+        
+        // Clear the flavor input if it exists
+        if (flavorInput) {
+            flavorInput.value = '';
+        }
+        
+        // Show success message
+        alert('تم إضافة ' + name + ' إلى السلة');
+        
         // Animation effect
         this.innerHTML = '<i class="fas fa-check"></i> تم الإضافة';
         setTimeout(() => {
@@ -198,6 +213,7 @@ function updateCart() {
             <div class="cart-item-info">
                 <h4>${item.name}</h4>
                 <p>الحجم: ${getSizeInArabic(item.size)}</p>
+                ${item.customFlavor ? `<p>الطعم: ${item.customFlavor}</p>` : ''}
             </div>
             <div class="cart-item-price">
                 ${item.price} ج.م
@@ -240,7 +256,11 @@ document.getElementById('whatsappOrder').addEventListener('click', () => {
     let total = 0;
 
     cart.forEach(item => {
-        message += `${item.name} (${getSizeInArabic(item.size)}) - ${item.price} ج.م\n`;
+        let itemDetails = `${item.name} (${getSizeInArabic(item.size)})`;
+        if (item.customFlavor) {
+            itemDetails += ` - الطعم: ${item.customFlavor}`;
+        }
+        message += `${itemDetails} - ${item.price} ج.م\n`;
         total += item.price;
     });
 

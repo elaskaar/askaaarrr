@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطعم دوله  اليوفي للبيتزا والمشروبات</title>
+    <title>مطعم اليوڤي للبيتزا والمشروبات</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,15 +12,21 @@
         <nav>
             <a href="#" class="logo">
                 <i class="fas fa-utensils"></i>
-                <span>اليوفي</span>
+                <span>مطعم اليوڤي</span>
             </a>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-links">
                 <a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a>
-                <a href="#menu"><i class="fas fa-book-open"></i> القائمة</a>
                 <a href="#about"><i class="fas fa-info-circle"></i> عنا</a>
                 <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                <a href="#contact" class="contact-btn mobile-contact">
+                    <i class="fas fa-phone"></i>
+                    <span>اتصل بنا</span>
+                </a>
             </div>
-            <a href="#contact" class="contact-btn">
+            <a href="#contact" class="contact-btn desktop-contact">
                 <i class="fas fa-phone"></i>
                 <span>اتصل بنا</span>
             </a>
@@ -30,14 +36,14 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>مطعم دوله اليوفي</h1>
+            <h1>مطعم اليوڤي</h1>
             <h3 class="owner-name">Ownar Ayman</h3>
             <p class="hero-subtitle">أشهى المشروبات والمأكولات</p>
             <div class="hero-buttons">
                 <a href="#menu" class="hero-btn primary">
                     <i class="fas fa-book-open"></i>
                     استعرض القائمة
-                    <small class="slogan">الي مجربش لسا ميعرفش</small>
+                    <small class="slogan">الي مجربش لسا ميعرفش...</small>
                 </a>
                 <a href="#contact" class="hero-btn secondary">
                     <i class="fas fa-phone"></i>
@@ -62,88 +68,50 @@
         </div>
     </section>
 
-    <section id="menu" class="menu">
-        <h2>قائمة الطعام</h2>
-        
-        <div class="menu-images">
-            <div class="menu-image-item">
-                <img src="بيتزا/منيو اكل 1.jpg" alt="قائمة الطعام" class="menu-card">
-                <h3>قائمة الطعام الرئيسية</h3>
-            </div>
-            <div class="menu-image-item">
-                <img src="بيتزا/منيو مكرونات وصوص.jpg" alt="قائمة المكرونات والصوص" class="menu-card">
-                <h3>المكرونات والصوص</h3>
-            </div>
-            <div class="menu-image-item menu-drinks-hot">
-                <img src="بيتزا/منيو مشروبات ساخنة.jpg" alt="قائمة المشروبات الساخنة" class="menu-card">
-                <div class="menu-icon">
-                    <i class="fas fa-mug-hot fa-3x"></i>
-                </div>
-                <h3>المشروبات الساخنة</h3>
-            </div>
-            <div class="menu-image-item menu-drinks-cold">
-                <img src="بيتزا/منيو مشروبات عصائر.jpg" alt="قائمة العصائر" class="menu-card">
-                <div class="menu-icon">
-                    <i class="fas fa-glass-whiskey fa-3x"></i>
-                </div>
-                <h3>العصائر الفريش</h3>
-            </div>
-        </div>
-
         <div class="featured-items">
-            <div class="section-header">
-                <h2>الأكثر طلباً</h2>
-                <p class="section-subtitle">أشهى الأصناف المميزة لدينا والمفضلة لدى زبائننا</p>
-            </div>
-            <div class="menu-grid">
+            <h2>الأكثر طلباً</h2>
+            <div class="menu-grid hot-drinks">
                 <div class="menu-item special">
-                    <img src="بيتزا/تشكن-رانش.jpg" alt="بيتزا تشكن رانش">
+                    <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
                     <h4>بيتزا تشكن رانش</h4>
-                    <p class="description">بيتزا بصلصة الرانش والدجاج المتبل مع الفلفل الملون وجبنة الموتزاريلا</p>
+                    <p class="description">صوص رانش جبنه موتزريلا شرائح فراخ فلفل الوان زيتون </p>
                     <div class="pizza-sizes">
-                        <button class="size-btn" data-size="small">صغير - 80 ج.م</button>
-                        <button class="size-btn" data-size="medium">وسط - 110 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 130 ج.م</button>
+                        <button class="size-btn" data-size="medium">وسط - 150 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 180 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                     <span class="badge">الأكثر طلباً</span>
                 </div>
-
                 <div class="menu-item special">
-                    <img src="بيتزا/بسطرمة-كيري.jpg" alt="بيتزا بسطرمة كيري">
+                    <img src="بيتزا/بيتزا1.jpg" alt="بيتزا">
                     <h4>بيتزا بسطرمة كيري</h4>
-                    <p class="description">بيتزا بجبنة الكيري والبسطرمة البلدي مع الفلفل الأخضر</p>
+                    <p class="description">صوص بيتزا جبنه موتزريلا شرايح بسطرمه قطع كيري فلفل الوان</p>
                     <div class="pizza-sizes">
-                        <button class="size-btn" data-size="small">صغير - 90 ج.م</button>
-                        <button class="size-btn" data-size="medium">وسط - 120 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 140 ج.م</button>
+                        <button class="size-btn" data-size="medium">وسط - 160 ج.م</button>
+                        <button class="size-btn" data-size="large">كبير - 200 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                     <span class="badge">الأكثر طلباً</span>
                 </div>
-
                 <div class="menu-item special">
-                    <img src="بيتزا/مكرونة-ميكس.jpg" alt="مكرونة ميكس جبن">
+                    <img src="مكرونة/مكرونة.jpg" alt="مكرونة">
                     <h4>مكرونة ميكس جبن</h4>
-                    <p class="description">مكرونة بخلطة الجبن المميزة (موتزاريلا، رومي، شيدر)</p>
-                    <div class="topping-options">
-                        <button class="topping-btn" data-topping="cheese"><i class="fas fa-cheese opacity-50"></i> بدون وش جبنة - 90 ج.م</button>
-                        <button class="topping-btn" data-topping="extra-cheese"><i class="fas fa-cheese"></i> مع وش جبنة - 105 ج.م</button>
+                    <p class="description">مكرونة بينا مع خلطة الجبن المميزة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="single">عادي - 140 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                     <span class="badge">الأكثر طلباً</span>
                 </div>
-
-                <div class="menu-item special">
-                    <img src="بيتزا/مكرونة-سدق.jpg" alt="مكرونة سدق">
-                    <h4>مكرونة سدق</h4>
-                    <p class="description">مكرونة بصوص الطماطم والسدق البلدي مع الجبنة الموتزاريلا</p>
-                    <div class="topping-options">
-                        <button class="topping-btn" data-topping="cheese"><i class="fas fa-cheese opacity-50"></i> بدون وش جبنة - 100 ج.م</button>
-                        <button class="topping-btn" data-topping="extra-cheese"><i class="fas fa-cheese"></i> مع وش جبنة - 115 ج.م</button>
+                <div class="menu-item">
+                    <img src="بيتزا/مكرونة.jpg" alt="مكرونة ميكس لحوم">
+                    <h4>مكرونة ميكس لحوم</h4>
+                    <p class="description">مكرونا بنا وايت صوص سوسيس سدق بلدي بسطرمه لحم مفروم بلدي </p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">بدون وش موتزريلا - 180 ج.م</button>
+                        <button class="size-btn" data-size="with-mozz">بوش موتزريلا - 210 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-                    <span class="badge">الأكثر طلباً</span>
                 </div>
             </div>
         </div>
@@ -155,9 +123,8 @@
             <div class="menu-item">
                 <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
                 <h4>بيتزا مارجريتا</h4>
-                <p class="description">صلصة طماطم، جبنة موزاريلا، ريحان طازج</p>
+                <p class="description">صوص بيتزا جبنه موتزريلا</p>
                 <div class="sizes">
-                    <button class="size-btn" data-size="small">صغير - 70 ج.م</button>
                     <button class="size-btn" data-size="medium">وسط - 90 ج.م</button>
                     <button class="size-btn" data-size="large">كبير - 110 ج.م</button>
                 </div>
@@ -166,12 +133,110 @@
 
             <div class="menu-item">
                 <img src="بيتزا/بيتزا1.jpg" alt="بيتزا">
-                <h4>بيتزا خضار مشكل</h4>
-                <p class="description">فلفل، زيتون، فطر، بصل، طماطم</p>
+                <h4>بيتزا ميكس جبن</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا جبنه بارميزان جبنه شيدر جبنه كيري جبنه تركي </p>
                 <div class="sizes">
-                    <button class="size-btn" data-size="small">صغير - 75 ج.م</button>
-                    <button class="size-btn" data-size="medium">وسط - 95 ج.م</button>
-                    <button class="size-btn" data-size="large">كبير - 115 ج.م</button>
+                    <button class="size-btn" data-size="medium">وسط    150 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 180 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا مشروم</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا مشروم فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 120 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 145 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا تشكن</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا شرائح فراخ فلفل الوان زيتون  </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 130 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 155 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا تشكن رانش</h4>
+                <p class="description">صوص رانش جبنه موتزريلا شرائح فراخ فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 150 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 180 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا تشكن دوريتوس</h4>
+                <p class="description">صوص بيتزا اسبايسي جبنه موتزريلا شرائح فراخ فلفل حار زيتون دوريتوس</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 135 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 160 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا تشكن سوبريم</h4>
+                <p class="description">صوص بيتزا بيبروني سلامي شرائح فراخ مشروم فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 160 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 195 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا بيمبو</h4>
+                <p class="description">صوص بيتزا شرائح فراخ تركي مدخن زيتون فلفل الوان صوص رانش </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 135 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 160 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا بيبروني</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا بيبروني ميكس جبن</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 160 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 190 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا سلامي</h4>
+                <p class="description">صوص جبنه موتزريلا سلامي فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 150 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 180 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا سموكي</h4>
+                <p class="description">صوص رانش جبنه موتزريلا تركي مدخن سلامي بيف بيكون كيري </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 190 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 240 ج.م</button>
                 </div>
                 <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
             </div>
@@ -179,11 +244,392 @@
             <div class="menu-item">
                 <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
                 <h4>بيتزا سوبر سوبريم</h4>
-                <p class="description">لحم مفروم، بيبروني، فلفل، زيتون، فطر</p>
+                <p class="description">صوص بيتزا جبنه موتزريلا بيبروني زيتون سلامي بيف توبنج مشروم فلفل الوان </p>
                 <div class="sizes">
-                    <button class="size-btn" data-size="small">صغير - 85 ج.م</button>
-                    <button class="size-btn" data-size="medium">وسط - 105 ج.م</button>
-                    <button class="size-btn" data-size="large">كبير - 125 ج.م</button>
+                    <button class="size-btn" data-size="medium">وسط - 165 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 200 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا سوسيس</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا سوسيس فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 140 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 170 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا بسطرمة</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا شرائح بسطرمه فلفل الوان </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 135 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 170 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا بسطرمة كيري</h4>
+                <p class="description">صوص بيتزا جبنه موتزرييلا شرائح بسطرمه قطع كيري فلفل الوان </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 160 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 200 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا صدق</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا سدق بلدي فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 175 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 210 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا صدق كيري</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا سدق بلدي قطع كيري فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 190 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 240 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا مفروم</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا لحم مفروم طازج فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 170 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 210 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا برجر</h4>
+                <p class="description">صوص بيتزا خيار مخلل فلفل الوان برجر لحم بلدي موتزريلا صوص بيج تيستي </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 220 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 260 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا مشكل لحوم</h4>
+                <p class="description">صوص جبنه موتزريلا سوسيس سدق بلدي شرائح بسطرمه لحم مفروم فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 170 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 220 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا تونة</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا قطع تونه فلفل الوان زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 190 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 220 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا شريمب تونة</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا قطع تونه جمبري فلفل الوان شرائح بصل زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 250 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 280 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا جمبري</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا جمبري فلفل الوان شرائح بصل زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 210 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 260 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا سي فوود</h4>
+                <p class="description">صوص بيتزا جمبري كاليماري كابوريا فلفل الوان شرائح بصل زيتون </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 190 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 260 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا سي رانش</h4>
+                <p class="description">صوص بيتزا جبنه موتزريلا جمبري كاليماري كابوريا فلفل الوان شرائح بصل زيتون صزص رانش </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 210 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 285 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا نيوتيلا</h4>
+                <p class="description">نيتويلا مخصوص </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 120 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 120 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/بيتزا.jpg" alt="بيتزا">
+                <h4>بيتزا ميكس حلو</h4>
+                <p class="description">ميكس نيوتيلا -ولوتس </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="medium">وسط - 130 ج.م</button>
+                    <button class="size-btn" data-size="large">كبير - 130 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="pasta" class="menu">
+        <h2>قائمة المكرونات</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة صدق">
+                <h4>مكرونة سدق</h4>
+                <p class="description">مكرونه بنا وايت صوص سدق بلدي </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">بدون وش موتزريلا - 150 ج.م</button>
+                    <button class="size-btn" data-size="with-mozz">بوش موتزريلا - 180 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة لحم مفروم">
+                <h4>مكرونة لحم مفروم</h4>
+                <p class="description">مكرونه بنا وايت صوص لحم مفروم بلدي </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">بدون وش موتزريلا - 150 ج.م</button>
+                    <button class="size-btn" data-size="with-mozz">بوش موتزريلا - 180 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة سوسيس">
+                <h4>مكرونة سوسيس</h4>
+                <p class="description">مكرونة بنا وايت صوص سوسيس </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">بدون وش موتزريلا - 120 ج.م</button>
+                    <button class="size-btn" data-size="with-mozz">بوش موتزريلا - 150 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة بسطرمة">
+                <h4>مكرونة بسطرمة</h4>
+                <p class="description">مكرونة بنا وايت صوص شرائح بسطرمه </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">بدون وش موتزريلا - 135 ج.م</button>
+                    <button class="size-btn" data-size="with-mozz">بوش موتزريلا - 165 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة مشكل لحوم">
+                <h4>مكرونة مشكل لحوم</h4>
+                <p class="description">مكرونة بنا وايت صوص سوسيس سدق بلدي بسطرمه لحم مفروم بلدي </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">بدون وش موتزريلا - 180 ج.م</button>
+                    <button class="size-btn" data-size="with-mozz">بوش موتزريلا - 220 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة جمبري">
+                <h4>مكرونة جمبري</h4>
+                <p class="description">مكرونة بنا وايت صوص جمبري </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">بدون وش موتزريلا - 200 ج.م</button>
+                    <button class="size-btn" data-size="with-mozz">بوش موتزريلا - 230 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة سي فوود">
+                <h4>مكرونة سي فوود</h4>
+                <p class="description">مكرونه بنا وايت صوص جمبري كاليماري كابوريا </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">بدون وش موتزريلا - 220 ج.م</button>
+                    <button class="size-btn" data-size="with-mozz">بوش موتزريلا - 250 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item special">
+                    <img src="مكرونة/مكرونة.jpg" alt="مكرونة">
+                    <h4>مكرونة ميكس جبن</h4>
+                    <p class="description">مكرونه بنا وايت صوص صوص شيدر جبنه كيري جبنه موتزريلا</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="single">عادي - 140 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <span class="badge">الأكثر طلباً</span>
+                </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة">
+                <h4>مكرونة الفريدو</h4>
+                <p class="description">مكرونة بنا وايت صوص شرائح فراخ مشروم جبنه بارميزان </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="single">السعر - 135 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/مكرونة.jpg" alt="مكرونة">
+                <h4>مكرونة نجرسكو</h4>
+                <p class="description">مكرونه بنا وايت صوص شرائح فراخ مشروم جبنه موتزريلا </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="single">السعر - 150 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sides" class="menu">
+        <h2>تحب تضيف ايه جنب الاوردر؟</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="بيتزا/فرايز.jpg" alt="فرايز">
+                <h4>فرايز</h4>
+                <p class="description">بطاطس </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 50 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/فرايز.jpg" alt="تشيزي فرايز">
+                <h4>تشيزي فرايز</h4>
+                <p class="description">بطاطس-صوص الجبنة</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 60 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="بيتزا/فرايز.jpg" alt="هالبينو فرايز">
+                <h4>هالبينو فرايز</h4>
+                <p class="description">بطاطس- صوص شيدر -قطع هالبينو </p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 70 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+        </div>
+
+        <h3 class="sub-section-title">الصوصات</h3>
+        <div class="menu-grid sauces-grid">
+            <div class="menu-item sauce-item">
+                <img src="بيتزا/صوص.jpg" alt="صوص بيج تيستي">
+                <h4>صوص بيج تيستي</h4>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 20 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item sauce-item">
+                <img src="بيتزا/صوص.jpg" alt="صوص رانش">
+                <h4>صوص رانش</h4>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 20 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item sauce-item">
+                <img src="بيتزا/صوص.jpg" alt="صوص باربكيو">
+                <h4>صوص باربكيو</h4>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 15 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item sauce-item">
+                <img src="بيتزا/صوص.jpg" alt="صوص شيدر">
+                <h4>صوص شيدر</h4>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 20 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item sauce-item">
+                <img src="بيتزا/صوص.jpg" alt="صوص سويت شيلي">
+                <h4>صوص سويت شيلي</h4>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 15 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+
+            <div class="menu-item sauce-item">
+                <img src="بيتزا/صوص.jpg" alt="صوص حار">
+                <h4>صوص حار</h4>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 15 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+            </div>
+        </div>
+
+        <h3 class="sub-section-title">الإضافات</h3>
+        <div class="menu-grid additions-grid">
+            <div class="menu-item addition-item">
+                <img src="بيتزا/موتزريلا.jpg" alt="إضافة جبنة موتزريلا">
+                <h4>إضافة جبنة موتزريلا</h4>
+                <p class="description">إضافة جبنة موتزريلا إضافية لأي طبق</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">السعر - 30 ج.م</button>
                 </div>
                 <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
             </div>
@@ -192,86 +638,26 @@
 
     <section id="drinks" class="menu">
         <h2>تحب تشرب ايه؟</h2>
-        <!-- Hot Drinks Section -->
-        <h3 class="section-title">المشروبات الساخنة</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="بيتزا/قهوة-تركي.jpg" alt="قهوة تركي">
-                <h4>قهوة تركي</h4>
-                <p class="description">قهوة تركي محضرة على الرمل بنكهة غنية</p>
-                <div class="price">15 ج.م</div>
-                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-            </div>
-            <div class="menu-item">
-                <img src="بيتزا/نسكافيه.jpg" alt="نسكافيه">
-                <h4>نسكافيه</h4>
-                <p class="description">نسكافيه كلاسيك مع رغوة كريمية</p>
-                <div class="price">20 ج.م</div>
-                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-            </div>
-            <div class="menu-item">
-                <img src="بيتزا/شاي.jpg" alt="شاي">
-                <h4>شاي</h4>
-                <p class="description">شاي مصري أصيل</p>
-                <div class="price">10 ج.م</div>
-                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-            </div>
-        </div>
-
-        <!-- Fresh Drinks Section -->
-        <h3 class="section-title">العصائر الفريش</h3>
-        <div class="menu-grid">
-            <div class="menu-item" data-drink="orange">
-                <img src="بيتزا/برتقال.jpg" alt="عصير برتقال">
-                <h4>عصير برتقال</h4>
-                <p class="description">عصير برتقال طبيعي 100٪</p>
-                <div class="price">25 ج.م</div>
-                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-            </div>
-            <div class="menu-item" data-drink="mango">
-                <img src="بيتزا/مانجو.jpg" alt="عصير مانجو">
-                <h4>عصير مانجو</h4>
-                <p class="description">عصير مانجو طبيعي</p>
-                <div class="price">30 ج.م</div>
-                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-            </div>
-            <div class="menu-item" data-drink="strawberry">
-                <img src="بيتزا/فراولة.jpg" alt="عصير فراولة">
-                <h4>عصير فراولة</h4>
-                <p class="description">عصير فراولة طازج</p>
-                <div class="price">25 ج.م</div>
-                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-            </div>
-            <div class="menu-item" data-drink="lemon">
-                <img src="بيتزا/ليمون.jpg" alt="عصير ليمون">
-                <h4>عصير ليمون</h4>
-                <p class="description">عصير ليمون منعش</p>
-                <div class="price">20 ج.م</div>
-                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-            </div>
-        </div>
 
         <div class="drinks-container">
             <h3 class="drinks-section-title">المشروبات الساخنة</h3>
             <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="بيتزا/قهوة-تركي.jpg" alt="قهوة تركي">
-                    <h4>قهوة تركي</h4>
-                    <p class="description">قهوة تركي أصيلة بنكهة مميزة</p>
+                <div class="menu-item" data-drink="tea">
+                    <img src="بيتزا/شاي.jpg" alt="شاي فلفر">
+                    <h4>شاي فلفر</h4>
+                    <p class="description">شاي بنكهة الفلفر المميزة</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 10 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 15 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 35 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
 
-                <div class="menu-item">
-                    <img src="بيتزا/نسكافيه.jpg" alt="نسكافيه">
-                    <h4>نسكافيه</h4>
-                    <p class="description">نسكافيه غني بالنكهة</p>
+                <div class="menu-item" data-drink="green-tea">
+                    <img src="بيتزا/شاي.jpg" alt="شاي اخضر">
+                    <h4>شاي اخضر</h4>
+                    <p class="description">شاي اخضر صحي ومنعش</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 12 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 18 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 25 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
@@ -279,125 +665,613 @@
                 <div class="menu-item">
                     <img src="بيتزا/شاي.jpg" alt="شاي">
                     <h4>شاي</h4>
-                    <p class="description">شاي مصري أصيل بالنعناع الطازج</p>
+                    <p class="description">شاي ساخن وطازج</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 8 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 12 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 22 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
 
-                <div class="menu-item">
-                    <img src="بيتزا/كابتشينو.jpg" alt="كابتشينو">
-                    <h4>كابتشينو</h4>
-                    <p class="description">قهوة إسبريسو مع حليب مبخر ورغوة كريمية</p>
+                <div class="menu-item" data-drink="herbs">
+                    <img src="بيتزا/اعشاب.jpg" alt="اعشاب">
+                    <h4>اعشاب</h4>
+                    <p class="description">شاي اعشاب طبيعي منعش</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 20 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 25 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 30 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
 
-                <div class="menu-item">
-                    <img src="بيتزا/هوت-تشوكليت.jpg" alt="هوت تشوكليت">
-                    <h4>هوت تشوكليت</h4>
-                    <p class="description">شوكولاتة ساخنة مع الكريمة والمارشميلو</p>
+                <div class="menu-item" data-drink="herbs-mix">
+                    <img src="بيتزا/ميكس-اعشاب.jpg" alt="ميكس اعشاب">
+                    <h4>ميكس اعشاب</h4>
+                    <p class="description">تشكيلة مميزة من الاعشاب الطبيعية</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 22 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 28 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 45 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
 
+                <div class="menu-item" data-drink="hot-cider">
+                    <img src="بيتزا/هوت-سيدر.jpg" alt="هوت سيدر">
+                    <h4>هوت سيدر</h4>
+                    <p class="description">مشروب ساخن بنكهة التفاح والقرفة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 51 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="hot-oreo">
+                    <img src="بيتزا/هوت-اوريو.jpg" alt="هوت اوريو">
+                    <h4>هوت اوريو</h4>
+                    <p class="description">مشروب شوكولاتة ساخن بنكهة الاوريو</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 50 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="hot-lotus">
+                    <img src="بيتزا/هوت-لوتس.jpg" alt="هوت لوتس">
+                    <h4>هوت لوتس</h4>
+                    <p class="description">مشروب ساخن بنكهة اللوتس المميزة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 50 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="hot-nutella">
+                    <img src="بيتزا/هوت-نيوتيلا.jpg" alt="هوت شوكلت نيوتيلا">
+                    <h4>هوت شوكلت نيوتيلا</h4>
+                    <p class="description">مشروب شوكولاتة ساخن بنكهة النيوتيلا الشهية</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 55 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="hot-chocolate-marshmallow">
+                    <img src="بيتزا/هوت-تشوكليت.jpg" alt="هوت شوكلت مارشميلو">
+                    <h4>هوت شوكلت مارشميلو</h4>
+                    <p class="description">شوكولاتة ساخنة مع المارشميلو الذائب</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 55 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+
+
                 <div class="menu-item">
-                    <img src="بيتزا/لاتيه.jpg" alt="لاتيه">
+                    <img src="بيتزا/قهوة.jpg" alt="قهوة">
+                    <h4>قهوة</h4>
+                    <p class="description">قهوة مصرية أصيلة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 25 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="hazelnut-coffee">
+                    <img src="بيتزا/قهوة.jpg" alt="قهوة بندق">
+                    <h4>قهوة بندق</h4>
+                    <p class="description">قهوة بنكهة البندق المميزة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 40 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="french-coffee">
+                    <img src="بيتزا/قهوة.jpg" alt="قهوة فرنساوي">
+                    <h4>قهوة فرنساوي</h4>
+                    <p class="description">قهوة فرنسية محمصة بطريقة خاصة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 40 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="caramel-coffee">
+                    <img src="بيتزا/قهوة.jpg" alt="قهوة كاراميل">
+                    <h4>قهوة كاراميل</h4>
+                    <p class="description">قهوة بنكهة الكاراميل اللذيذة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 40 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="nutella-coffee">
+                    <img src="بيتزا/قهوة.jpg" alt="قهوة نيوتيلا">
+                    <h4>قهوة نيوتيلا</h4>
+                    <p class="description">قهوة بنكهة النيوتيلا الشهية</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 45 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="single-espresso">
+                    <img src="بيتزا/قهوة.jpg" alt="اسبريسو سنجل">
+                    <h4>اسبريسو سنجل</h4>
+                    <p class="description">شوت اسبريسو مركز وغني</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 30 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="double-espresso">
+                    <img src="بيتزا/قهوة.jpg" alt="اسبريسو دابل">
+                    <h4>اسبريسو دابل</h4>
+                    <p class="description">شوت مزدوج من الاسبريسو المركز</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 40 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="single-macchiato">
+                    <img src="بيتزا/قهوة.jpg" alt="ميكاتو سنجل">
+                    <h4>ميكاتو سنجل</h4>
+                    <p class="description">شوت اسبريسو مع رغوة حليب خفيفة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 35 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="double-macchiato">
+                    <img src="بيتزا/قهوة.jpg" alt="ميكاتو دابل">
+                    <h4>ميكاتو دابل</h4>
+                    <p class="description">شوت مزدوج من الاسبريسو مع رغوة حليب</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 45 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="flat-white">
+                    <img src="بيتزا/قهوة.jpg" alt="فلات وايت">
+                    <h4>فلات وايت</h4>
+                    <p class="description">شوت دابل اسبريسو مع حليب مبخر كريمي</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 65 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="latte">
+                    <img src="بيتزا/قهوة.jpg" alt="لاتيه">
                     <h4>لاتيه</h4>
-                    <p class="description">قهوة ممزوجة بالحليب الساخن ورغوة كريمية</p>
+                    <p class="description">شوت اسبريسو مع حليب مبخر ورغوة كريمية</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 18 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 23 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 45 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="cappuccino">
+                    <img src="بيتزا/قهوة.jpg" alt="كابتشينو">
+                    <h4>كابتشينو</h4>
+                    <p class="description">شوت اسبريسو مع حليب مبخر ورغوة كثيفة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 60 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="american-coffee">
+                    <img src="بيتزا/قهوة.jpg" alt="امريكان كوفي">
+                    <h4>امريكان كوفي</h4>
+                    <p class="description">قهوة امريكية مخففة بالماء الساخن</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 40 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="nescafe">
+                    <img src="بيتزا/قهوة.jpg" alt="نسكافيه">
+                    <h4>نسكافيه</h4>
+                    <p class="description">قهوة سريعة التحضير بنكهة غنية</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 45 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="mocha">
+                    <img src="بيتزا/قهوة.jpg" alt="موكا">
+                    <h4>موكا</h4>
+                    <p class="description">شوت اسبريسو مع شوكولاتة ساخنة وحليب مبخر</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 55 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="white-mocha">
+                    <img src="بيتزا/قهوة.jpg" alt="وايت موكا">
+                    <h4>وايت موكا</h4>
+                    <p class="description">شوت اسبريسو مع شوكولاتة بيضاء وحليب مبخر</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 65 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
             </div>
 
-            <h3 class="drinks-section-title">العصائر الطازجة</h3>
+            <h3 class="drinks-section-title">الميلك شيك</h3>
             <div class="menu-grid">
-                <div class="menu-item" data-drink="orange">
-                    <img src="بيتزا/برتقال.jpg" alt="عصير برتقال">
-                    <h4>عصير برتقال</h4>
-                    <p class="description">عصير برتقال طازج 100%</p>
+                <div class="menu-item" data-drink="vanilla-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك فانيليا">
+                    <h4>ميلك شيك فانيليا</h4>
+                    <p class="description">ميلك شيك بنكهة الفانيليا المميزة</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 20 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 25 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 65 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
 
+                <div class="menu-item" data-drink="chocolate-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك شوكلت">
+                    <h4>ميلك شيك شوكلت</h4>
+                    <p class="description">ميلك شيك بالشوكولاتة الغنية</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 65 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="mango-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك مانجو">
+                    <h4>ميلك شيك مانجو</h4>
+                    <p class="description">ميلك شيك بنكهة المانجو الطازجة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 65 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="caramel-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك كراميل">
+                    <h4>ميلك شيك كراميل</h4>
+                    <p class="description">ميلك شيك بصوص الكراميل اللذيذ</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 70 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="oreo-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك اوريو">
+                    <h4>ميلك شيك اوريو</h4>
+                    <p class="description">ميلك شيك مع قطع الاوريو المطحونة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 75 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="kinder-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك كيندر">
+                    <h4>ميلك شيك كيندر</h4>
+                    <p class="description">ميلك شيك بنكهة شوكولاتة الكيندر</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 75 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="pistachio-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك بستاشيو">
+                    <h4>ميلك شيك بستاشيو</h4>
+                    <p class="description">ميلك شيك بنكهة البستاشيو الفاخرة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 110 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="pina-colada-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك بينا كولادا">
+                    <h4>ميلك شيك بينا كولادا</h4>
+                    <p class="description">ميلك شيك بنكهة جوز الهند والأناناس</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 100 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="custom-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="اي طعم تحبه">
+                    <h4>اي طعم تحبه</h4>
+                    <p class="description">اختار الطعم المفضل لديك من النكهات المتوفرة</p>
+                    <div class="custom-flavor">
+                        <input type="text" class="flavor-input" placeholder="اكتب الطعم المطلوب" maxlength="30">
+                    </div>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 30 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+
+             <h3 class="drinks-section-title">سموزي </h3>
+            <div class="menu-grid">
+             <div class="menu-item" data-drink="custom-milkshake">
+                    <img src="بيتزا/ميلك-شيك.jpg" alt="اي طعم تحبه">
+                    <h4>اي طعم تحبه في السموزي</h4>
+                    <p class="description">اختار الطعم المفضل لديك من النكهات المتوفرة</p>
+                    <div class="custom-flavor">
+                        <input type="text" class="flavor-input" placeholder="اكتب الطعم المطلوب" maxlength="30">
+                    </div>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 30 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+
+            <h3 class="drinks-section-title">الزبادي</h3>
+            <div class="menu-grid">
+                <div class="menu-item" data-drink="plain-yogurt">
+                    <img src="بيتزا/زبادي.jpg" alt="زبادي سادة">
+                    <h4>زبادي سادة</h4>
+                    <p class="description">زبادي طازج</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">عادي - 45 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="fruit-yogurt">
+                    <img src="بيتزا/زبادي.jpg" alt="زبادي بالفواكه">
+                    <h4>زبادي فواكه</h4>
+                    <p class="description">زبادي مع تشكيلة فواكه طازجة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">عادي - 65 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="honey-yogurt">
+                    <img src="بيتزا/زبادي.jpg" alt="زبادي بالعسل">
+                    <h4>زبادي عسل</h4>
+                    <p class="description">زبادي مع عسل نحل طبيعي</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">عادي - 60 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="flavored-yogurt">
+                    <img src="بيتزا/زبادي.jpg" alt="زبادي فلفر">
+                    <h4>زبادي فلفر</h4>
+                    <p class="description">زبادي بنكهات مختلفة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">عادي - 60 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+
+            <h3 class="drinks-section-title">ايس موكا</h3>
+            <div class="menu-grid">
+                <div class="menu-item" data-drink="ice-mocha">
+                    <img src="بيتزا/قهوة.jpg" alt="ايس موكا">
+                    <h4>ايس موكا</h4>
+                    <p class="description">قهوة مثلجة مع شوكولاتة وحليب مخفوق</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 70 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="ice-latte">
+                    <img src="بيتزا/قهوة.jpg" alt="ايس لاتيه">
+                    <h4>ايس لاتيه</h4>
+                    <p class="description">قهوة مثلجة مع حليب مخفوق ورغوة كريمية</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 60ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="ice-caramel">
+                    <img src="بيتزا/قهوة.jpg" alt="ايس كراميل">
+                    <h4>ايس كراميل</h4>
+                    <p class="description">قهوة مثلجة مع صوص الكراميل وحليب مخفوق</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 70ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="spanish-latte">
+                    <img src="بيتزا/قهوة.jpg" alt="ايس اسبانش لاتيه">
+                    <h4>ايس اسبانش لاتيه</h4>
+                    <p class="description">قهوة مثلجة بالحليب المكثف المحلى والحليب المخفوق</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 70ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+
+            <h3 class="drinks-section-title">موهيتو</h3>
+            <div class="menu-grid">
+                <div class="menu-item" data-drink="classic-mojito">
+                    <img src="بيتزا/موهيتو.jpg" alt="موهيتو كلاسيك">
+                    <h4>موهيتو كلاسيك</h4>
+                    <p class="description">مشروب منعش من الليمون والنعناع الطازج</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 55ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="flavored-mojito">
+                    <img src="بيتزا/موهيتو.jpg" alt="موهيتو فلفر">
+                    <h4>موهيتو فلفر</h4>
+                    <p class="description">موهيتو بنكهة اختيارك (فراولة، توت، خوخ، باشن)</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 65ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="sunshine">
+                    <img src="بيتزا/موهيتو.jpg" alt="صن شاين">
+                    <h4>صن شاين</h4>
+                    <p class="description">مزيج منعش من البرتقال والأناناس مع النعناع</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 60ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="redbull-flavor">
+                    <img src="بيتزا/موهيتو.jpg" alt="ريدبول فلفر">
+                    <h4>ريدبول فلفر</h4>
+                    <p class="description">ريدبول منعش مع نكهة اختيارك</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 80ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="blue-sky">
+                    <img src="بيتزا/موهيتو.jpg" alt="بلو سكاي">
+                    <h4>بلو سكاي</h4>
+                    <p class="description">مشروب منعش باللون الأزرق مع الليمون والنعناع</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 70ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+
+            <h3 class="drinks-section-title">فرابيه</h3>
+            <div class="menu-grid">
+                <div class="menu-item" data-drink="caramel-frappe">
+                    <img src="بيتزا/فرابيه.jpg" alt="فرابيه كراميل">
+                    <h4>فرابيه كراميل</h4>
+                    <p class="description">مشروب مثلج مخفوق بنكهة الكراميل مع الكريمة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 70 ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="nutella-frappe">
+                    <img src="بيتزا/فرابيه.jpg" alt="فرابيه نيوتيلا">
+                    <h4>فرابيه نيوتيلا</h4>
+                    <p class="description">مشروب مثلج مخفوق بنكهة النيوتيلا مع الكريمة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 75ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="oreo-frappe">
+                    <img src="بيتزا/فرابيه.jpg" alt="فرابيه اوريو">
+                    <h4>فرابيه اوريو</h4>
+                    <p class="description">مشروب مثلج مخفوق بقطع الاوريو والكريمة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 70ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="mocha-frappe">
+                    <img src="بيتزا/فرابيه.jpg" alt="فرابيه موكا">
+                    <h4>فرابيه موكا</h4>
+                    <p class="description">مشروب مثلج مخفوق بالقهوة والشوكولاتة والكريمة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 70ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+
+                <div class="menu-item" data-drink="lotus-frappe">
+                    <img src="بيتزا/فرابيه.jpg" alt="فرابيه لوتس">
+                    <h4>فرابيه لوتس</h4>
+                    <p class="description">مشروب مثلج مخفوق بنكهة اللوتس مع الكريمة</p>
+                    <div class="sizes">
+                        <button class="size-btn" data-size="regular">السعر - 75ج.م</button>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                </div>
+            </div>
+
+            <h3 class="drinks-section-title">الفريشات</h3>
+            <div class="menu-grid">
                 <div class="menu-item" data-drink="mango">
                     <img src="بيتزا/مانجو.jpg" alt="عصير مانجو">
                     <h4>عصير مانجو</h4>
                     <p class="description">عصير مانجو طبيعي 100%</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 22 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 28 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 55ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
 
                 <div class="menu-item" data-drink="strawberry">
                     <img src="بيتزا/فراولة.jpg" alt="عصير فراولة">
-                    <h4>عصير فراولة</h4>
-                    <p class="description">عصير فراولة طازج مع الحليب</p>
+                    <h4> فراولة</h4>
+                    <p class="description">عصير فراولة طازج </p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 25 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 30 ج.م</button>
-                    </div>
-                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
-                </div>
-
-                <div class="menu-item" data-drink="milkshake-chocolate">
-                    <img src="بيتزا/ميلك-شيك.jpg" alt="ميلك شيك شوكولاتة">
-                    <h4>ميلك شيك شوكولاتة</h4>
-                    <p class="description">حليب مع آيس كريم ونيوتيلا</p>
-                    <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 30 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 35 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر -  50ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
 
                 <div class="menu-item" data-drink="milkshake-vanilla">
-                    <img src="بيتزا/ميلك-شيك-فانيليا.jpg" alt="ميلك شيك فانيليا">
-                    <h4>ميلك شيك فانيليا</h4>
-                    <p class="description">حليب مع آيس كريم فانيليا وصوص جوز الهند</p>
+                    <img src="بيتزا/ميلك-شيك-فانيليا.jpg" alt="فراوله حليب ">
+                    <h4>فراوله حليب</h4>
+                    <p class="description">فراوله طازجة مع الحليب </p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 28 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 33 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 65 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
 
                 <div class="menu-item" data-drink="lemonade">
-                    <img src="بيتزا/ليموناضة.jpg" alt="ليموناضة">
-                    <h4>ليموناضة منعشة</h4>
-                    <p class="description">ليمون طازج مع النعناع</p>
+                    <img src="بيتزا/ليموناضة.jpg" alt="ليمون">
+                    <h4>ليمون</h4>
+                    <p class="description">ليمون طازج </p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="small">صغير - 15 ج.م</button>
-                        <button class="size-btn" data-size="large">كبير - 20 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 45 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
             </div>
+            
+            <div class="menu-item">
+                <img src="مشروبات/ليمون-نعناع.jpg" alt="ليمون نعناع">
+                <h4>ليمون نعناع</h4>
+                <p class="description">عصير ليمون طازج مع النعناع المنعش</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 35 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-cart-plus"></i> أضف للسلة
+                </button>
+            </div>
+        </div>
 
-            <h3 class="drinks-section-title">المشروبات الغازية</h3>
+            <h3 class="drinks-section-title">الصودا </h3>
             <div class="menu-grid">
                 <div class="menu-item">
                     <h4>كوكاكولا</h4>
                     <p class="description">كوكاكولا منعشة وباردة</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
-                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 10 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
@@ -406,8 +1280,7 @@
                     <h4>سبرايت</h4>
                     <p class="description">سبرايت منعش وبارد</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
-                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 10 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
@@ -416,8 +1289,7 @@
                     <h4>فانتا برتقال</h4>
                     <p class="description">فانتا بنكهة البرتقال المنعشة</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
-                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 10 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
@@ -426,8 +1298,7 @@
                     <h4>ميرندا</h4>
                     <p class="description">ميرندا بنكهة التفاح المنعشة</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
-                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 10 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
@@ -436,8 +1307,7 @@
                     <h4>7-Up</h4>
                     <p class="description">سفن اب منعش وبارد</p>
                     <div class="sizes">
-                        <button class="size-btn" data-size="can">علبة - 8 ج.م</button>
-                        <button class="size-btn" data-size="bottle">زجاجة - 12 ج.م</button>
+                        <button class="size-btn" data-size="regular">السعر - 10 ج.م</button>
                     </div>
                     <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
                 </div>
@@ -445,19 +1315,19 @@
         </div>
             <div class="menu-grid hot-drinks">
                 <div class="menu-item">
-                    <img src="بيتزا/قهوة-تركي.jpg" alt="قهوة تركي">
-                    <h4>قهوة تركي</h4>
-                    <p class="description">قهوة تركية أصيلة محضرة على الرمل</p>
+                    <img src="بيتزا/شاي.jpg" alt="شاي">
+                    <h4>شاي</h4>
+                    <p class="description">شاي ساخن وطازج</p>
                 </div>
-                <div class="menu-item" data-drink="coffee">
-                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format" alt="كابتشينو">
-                    <h4>كابتشينو</h4>
-                    <p class="description">إسبريسو مع حليب مبخر ورغوه كريمية</p>
+                <div class="menu-item" data-drink="tea">
+                    <img src="بيتزا/شاي.jpg" alt="شاي فلفر">
+                    <h4>شاي فلفر</h4>
+                    <p class="description">شاي بنكهة الفلفر المميزة</p>
                 </div>
-                <div class="menu-item" data-drink="coffee">
-                    <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500&auto=format" alt="لاتيه">
-                    <h4>لاتيه</h4>
-                    <p class="description"> إسبريسو مع حليب مبخر وطبقة رغوة خفيفة</p>
+                <div class="menu-item" data-drink="green-tea">
+                    <img src="بيتزا/شاي.jpg" alt="شاي اخضر">
+                    <h4>شاي اخضر</h4>
+                    <p class="description">شاي اخضر صحي ومنعش</p>
                 </div>
                 <div class="menu-item" data-drink="tea">
                     <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&auto=format" alt="شاي مصري">
@@ -503,7 +1373,7 @@
     </section>
 
     <section id="about" class="about">
-        <h2>عن مطعم اليوفي </h2>
+        <h2>عن مطعم اليوفي</h2>
         <h3>Ownar Ayman</h3>
         <div class="about-content">
             <div class="about-image">
@@ -535,6 +1405,40 @@
                         <p>فريق عمل محترف لخدمتكم</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="drinks" class="menu">
+        <h2>قائمة المشروبات</h2>
+        <div class="menu-grid">
+            <div class="menu-item special">
+                <img src="مشروبات/سموزي.jpg" alt="سموزي">
+                <h4>سموزي</h4>
+                <p class="description">سموزي طازج مع الطعم الذي تختاره</p>
+                <div class="flavor-input">
+                    <label for="smoothie-flavor">اختر الطعم:</label>
+                    <input type="text" id="smoothie-flavor" placeholder="اكتب الطعم الذي تريده" class="flavor-text">
+                </div>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 45 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-cart-plus"></i> أضف للسلة
+                </button>
+                <span class="badge">الأكثر طلباً</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="مشروبات/ليمون-نعناع.jpg" alt="ليمون نعناع">
+                <h4>ليمون نعناع</h4>
+                <p class="description">عصير ليمون طازج مع النعناع المنعش</p>
+                <div class="sizes">
+                    <button class="size-btn" data-size="regular">عادي - 35 ج.م</button>
+                </div>
+                <button class="add-to-cart-btn">
+                    <i class="fas fa-cart-plus"></i> أضف للسلة
+                </button>
             </div>
         </div>
     </section>
