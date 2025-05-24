@@ -1425,6 +1425,11 @@ background: rgba(255, 245, 245, 0.9);
     font-weight: bold;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .call-now-btn:hover {
