@@ -58,7 +58,7 @@
             <h1>مطعم اليوڤي</h1>
             <p class="hero-subtitle">اللي مجربش لسا ميعرفش...</p>
             <div class="hero-buttons text-center">
-                <a href="tel:+20-100-341-0708" class="hero-btn primary call-now-btn" rel="noopener" role="button">
+                <a href="#" class="hero-btn primary call-now-btn" rel="noopener" role="button">
                     <i class="fas fa-phone fa-bounce"></i>
                     اتصل بنا الآن
                     <small class="phone-number" dir="ltr">01003410708</small>
@@ -1454,16 +1454,31 @@
 
     <script src="script.js"></script>
     <script>
-        function makePhoneCall() {
+    document.addEventListener('DOMContentLoaded', function() {
+        const callButton = document.querySelector('.call-now-btn');
+        callButton.addEventListener('click', function(e) {
+            e.preventDefault();
             const phoneNumber = '01003410708';
-            // محاولة استخدام واجهة برمجة التطبيقات القياسية
-            if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
-                window.location.href = `tel:${phoneNumber}`;
-            } else {
-                // محاولة فتح في نافذة جديدة للمتصفحات الأخرى
-                window.open(`tel:${phoneNumber}`, '_system');
+            try {
+                // محاولة أولى باستخدام الرابط المباشر
+                window.location.href = 'tel:' + phoneNumber;
+                
+                // محاولة ثانية بعد تأخير قصير
+                setTimeout(function() {
+                    window.open('tel:' + phoneNumber, '_self');
+                }, 100);
+                
+                // محاولة ثالثة باستخدام تقنية مختلفة
+                const link = document.createElement('a');
+                link.href = 'tel:' + phoneNumber;
+                link.click();
+            } catch (error) {
+                console.error('Error making phone call:', error);
+                // محاولة أخيرة
+                window.location.replace('tel:' + phoneNumber);
             }
-        }
+        });
+    });
     </script>
 </body>
 </html>
