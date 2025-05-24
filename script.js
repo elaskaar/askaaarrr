@@ -245,6 +245,45 @@ function getSizeInArabic(size) {
     return sizes[size];
 }
 
+// تحديث قسم العنوان عند تغيير نوع الطلب
+document.querySelectorAll('input[name="orderType"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const addressSection = document.getElementById('addressSection');
+        if (this.value === 'delivery') {
+            addressSection.style.display = 'block';
+        } else {
+            addressSection.style.display = 'none';
+        }
+    });
+});
+
+// إضافة الموقع الحالي
+document.getElementById('locationBtn').addEventListener('click', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                
+                // تحديث حقل العنوان مع إحداثيات الموقع
+                const locationLink = `https://maps.google.com/?q=${latitude},${longitude}`;
+                document.getElementById('customerAddress').value += `\n\nرابط الموقع: ${locationLink}`;
+                
+                // إظهار رسالة النجاح
+                document.getElementById('locationInfo').style.display = 'flex';
+                setTimeout(() => {
+                    document.getElementById('locationInfo').style.display = 'none';
+                }, 3000);
+            },
+            (error) => {
+                alert('عذراً، لم نتمكن من تحديد موقعك. الرجاء كتابة العنوان يدوياً.');
+            }
+        );
+    } else {
+        alert('عذراً، متصفحك لا يدعم تحديد المواقع.');
+    }
+});
+
 // WhatsApp order
 document.getElementById('whatsappOrder').addEventListener('click', () => {
     if (cart.length === 0) {
@@ -252,7 +291,28 @@ document.getElementById('whatsappOrder').addEventListener('click', () => {
         return;
     }
 
-    let message = 'طلب جديد:\n\n';
+    const selectedOrderType = document.querySelector('input[name="orderType"]:checked');
+    if (!selectedOrderType) {
+        alert('الرجاء اختيار نوع الطلب');
+        return;
+    }
+
+    // التحقق من العنوان إذا كان التوصيل للمنزل
+    if (selectedOrderType.value === 'delivery') {
+        const address = document.getElementById('customerAddress').value.trim();
+        if (!address) {
+            alert('الرجاء إدخال عنوان التوصيل');
+            return;
+        }
+    }
+
+    const orderTypeText = {
+        'delivery': 'توصيل للمنزل',
+        'dineIn': 'تناول في الصالة',
+        'pickup': 'استلام من المطعم'
+    }[selectedOrderType.value];
+
+    let message = `طلب جديد (${orderTypeText}):\n\n`;
     let total = 0;
 
     cart.forEach(item => {
@@ -263,6 +323,17 @@ document.getElementById('whatsappOrder').addEventListener('click', () => {
         message += `${itemDetails} - ${item.price} ج.م\n`;
         total += item.price;
     });
+
+    // إضافة العنوان إذا كان التوصيل للمنزل
+    if (selectedOrderType.value === 'delivery') {
+        const address = document.getElementById('customerAddress').value.trim();
+        message += `\nعنوان التوصيل:\n${address}`;
+    }
+
+    const notes = document.getElementById('orderNotes').value.trim();
+    if (notes) {
+        message += `\nملاحظات: ${notes}`;
+    }
 
     message += `\nالمجموع: ${total} ج.م`;
 

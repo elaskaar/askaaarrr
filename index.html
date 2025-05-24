@@ -11,8 +11,16 @@
     <header>
         <nav>
             <a href="#" class="logo">
-                <i class="fas fa-utensils"></i>
-                <span>مطعم اليوڤي</span>
+                <div class="logo-text">
+                    <div class="logo-main">
+                        هنا السعادة
+                        <i class="fas fa-utensils fire-icon"></i>
+                    </div>
+                    <div class="logo-sub">
+                        دولة اليوڤي
+                        <i class="fas fa-mug-hot fire-icon"></i>
+                    </div>
+                </div>
             </a>
             <button class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -21,15 +29,7 @@
                 <a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a>
                 <a href="#about"><i class="fas fa-info-circle"></i> عنا</a>
                 <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
-                <a href="#contact" class="contact-btn mobile-contact">
-                    <i class="fas fa-phone"></i>
-                    <span>اتصل بنا</span>
-                </a>
             </div>
-            <a href="#contact" class="contact-btn desktop-contact">
-                <i class="fas fa-phone"></i>
-                <span>اتصل بنا</span>
-            </a>
         </nav>
     </header>
 
@@ -58,34 +58,15 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>مطعم اليوڤي</h1>
-            <h3 class="owner-name">Ownar Ayman</h3>
-            <p class="hero-subtitle">أشهى المشروبات والمأكولات</p>
-            <div class="hero-buttons">
-                <a href="#menu" class="hero-btn primary">
-                    <i class="fas fa-book-open"></i>
-                    استعرض القائمة
-                    <small class="slogan">الي مجربش لسا ميعرفش...</small>
-                </a>
-                <a href="#contact" class="hero-btn secondary">
+            <p class="hero-subtitle">اللي مجربش لسا ميعرفش...</p>
+            <div class="hero-buttons text-center">
+                <a href="tel:01003410708" class="hero-btn primary">
                     <i class="fas fa-phone"></i>
                     اتصل بنا
                     <small class="phone-number">01003410708</small>
                 </a>
             </div>
-            <div class="hero-features">
-                <div class="feature">
-                    <i class="fas fa-clock"></i>
-                    متاحين يومياً
-                </div>
-                <div class="feature">
-                    <i class="fas fa-motorcycle"></i>
-                    خدمة توصيل
-                </div>
-                <div class="feature">
-                    <i class="fas fa-star"></i>
-                    جودة عالية
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -1299,7 +1280,7 @@
 
                 <div class="menu-item">
                     <h4>سبرايت</h4>
-                    <p class="description">سبرايت منعش وبارد</p>
+                    <p class="description">سبرايت </p>
                     <div class="sizes">
                         <button class="size-btn" data-size="regular">السعر - 10 ج.م</button>
                     </div>
@@ -1326,7 +1307,7 @@
 
                 <div class="menu-item">
                     <h4>7-Up</h4>
-                    <p class="description">سفن اب منعش وبارد</p>
+                    <p class="description">سفن اب </p>
                     <div class="sizes">
                         <button class="size-btn" data-size="regular">السعر - 10 ج.م</button>
                     </div>
@@ -1334,71 +1315,11 @@
                 </div>
             </div>
         </div>
-            <div class="menu-grid hot-drinks">
-                <div class="menu-item">
-                    <img src="بيتزا/شاي.jpg" alt="شاي">
-                    <h4>شاي</h4>
-                    <p class="description">شاي ساخن وطازج</p>
-                </div>
-                <div class="menu-item" data-drink="tea">
-                    <img src="بيتزا/شاي.jpg" alt="شاي فلفر">
-                    <h4>شاي فلفر</h4>
-                    <p class="description">شاي بنكهة الفلفر المميزة</p>
-                </div>
-                <div class="menu-item" data-drink="green-tea">
-                    <img src="بيتزا/شاي.jpg" alt="شاي اخضر">
-                    <h4>شاي اخضر</h4>
-                    <p class="description">شاي اخضر صحي ومنعش</p>
-                </div>
-                <div class="menu-item" data-drink="tea">
-                    <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&auto=format" alt="شاي مصري">
-                    <h4>شاي مصري</h4>
-                    <p class="description">شاي مصري أصيل بالنعناع الطازج</p>
-                </div>
-            </div>
-
-            <h3 class="drinks-section-title">العصائر والمشروبات الباردة</h3>
-            <div class="menu-grid cold-drinks">
-                <div class="menu-item" data-drink="orange">
-                    <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500&auto=format" alt="عصير برتقال">
-                    <h4>عصير برتقال طازج</h4>
-                    <p class="description">عصير برتقال طبيعي 100٪</p>
-                </div>
-                <div class="menu-item" data-drink="mango">
-                    <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&auto=format" alt="عصير مانجو">
-                    <h4>عصير مانجو</h4>
-                    <p class="description">عصير مانجو طبيعي مع </p>
-                </div>
-                <div class="menu-item" data-drink="strawberry">
-                    <img src="https://images.unsplash.com/photo-1553530979-7ee52a2670c4?w=500&auto=format" alt="عصير فراولة">
-                    <h4>عصير فراولة</h4>
-                    <p class="description">عصير فراولة طازج مع الحليب</p>
-                </div>
-                <div class="menu-item" data-drink="lemonade">
-                    <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=500&auto=format" alt="ليموناضة">
-                    <h4>ليموناضة منعشة</h4>
-                    <p class="description">ليمون طازج مع النعناع والسكر</p>
-                </div>
-                <div class="menu-item" data-drink="chocolate">
-                    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&auto=format" alt="ميلك شيك شوكولاتة">
-                    <h4>ميلك شيك شوكولاتة</h4>
-                    <p class="description">حليب مع ايس كريم مع نيوتيلا </p>
-                </div>
-                <div class="menu-item" data-drink="vanilla">
-                    <img src="https://images.unsplash.com/photo-1568901839119-631418a3910d?w=500&auto=format" alt="ميلك شيك فانيليا">
-                    <h4>ميلك شيك فانيليا</h4>
-                    <p class="description">حليب ع ايس كريم فانيليا و ص جوز هند</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="about" class="about">
         <h2>عن مطعم اليوفي</h2>
-        <h3>Ownar Ayman</h3>
         <div class="about-content">
             <div class="about-image">
-                <img src="بيتزا/بيتزا.jpg" alt="مطعم اليوفي">
             </div>
             <div class="about-text">
                 <h3>مرحباً بكم في مطعم اليوفي</h3>
@@ -1426,40 +1347,6 @@
                         <p>فريق عمل محترف لخدمتكم</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="drinks" class="menu">
-        <h2>قائمة المشروبات</h2>
-        <div class="menu-grid">
-            <div class="menu-item special">
-                <img src="مشروبات/سموزي.jpg" alt="سموزي">
-                <h4>سموزي</h4>
-                <p class="description">سموزي طازج مع الطعم الذي تختاره</p>
-                <div class="flavor-input">
-                    <label for="smoothie-flavor">اختر الطعم:</label>
-                    <input type="text" id="smoothie-flavor" placeholder="اكتب الطعم الذي تريده" class="flavor-text">
-                </div>
-                <div class="sizes">
-                    <button class="size-btn" data-size="regular">عادي - 45 ج.م</button>
-                </div>
-                <button class="add-to-cart-btn">
-                    <i class="fas fa-cart-plus"></i> أضف للسلة
-                </button>
-                <span class="badge">الأكثر طلباً</span>
-            </div>
-
-            <div class="menu-item">
-                <img src="مشروبات/ليمون-نعناع.jpg" alt="ليمون نعناع">
-                <h4>ليمون نعناع</h4>
-                <p class="description">عصير ليمون طازج مع النعناع المنعش</p>
-                <div class="sizes">
-                    <button class="size-btn" data-size="regular">عادي - 35 ج.م</button>
-                </div>
-                <button class="add-to-cart-btn">
-                    <i class="fas fa-cart-plus"></i> أضف للسلة
-                </button>
             </div>
         </div>
     </section>
@@ -1510,6 +1397,46 @@
             <span class="close-modal">&times;</span>
             <h2>سلة المشتريات</h2>
             <div id="cartItems"></div>
+            <div class="order-type">
+                <label>نوع الطلب:</label>
+                <div class="order-options">
+                    <div class="order-option">
+                        <input type="radio" id="delivery" name="orderType" value="delivery">
+                        <label for="delivery">
+                            <i class="fas fa-motorcycle"></i>
+                            توصيل للمنزل
+                        </label>
+                    </div>
+                    <div class="order-option">
+                        <input type="radio" id="dineIn" name="orderType" value="dineIn">
+                        <label for="dineIn">
+                            <i class="fas fa-utensils"></i>
+                            تناول في الصالة
+                        </label>
+                    </div>
+                    <div class="order-option">
+                        <input type="radio" id="pickup" name="orderType" value="pickup">
+                        <label for="pickup">
+                            <i class="fas fa-shopping-bag"></i>
+                            استلام من المطعم
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="addressSection" class="address-section" style="display: none;">
+                <div class="address-input">
+                    <label for="customerAddress">العنوان:</label>
+                    <textarea id="customerAddress" placeholder="اكتب عنوانك بالتفصيل..."></textarea>
+                </div>
+                <button id="locationBtn" class="location-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    إضافة موقعك الحالي
+                </button>
+                <div id="locationInfo" class="location-info" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    تم تحديد موقعك بنجاح
+                </div>
+            </div>
             <div class="customer-notes">
                 <label for="orderNotes">ملاحظات إضافية:</label>
                 <textarea id="orderNotes" placeholder="اكتب ملاحظاتك هنا... (مثال: بدون بصل، حار، الخ)"></textarea>
