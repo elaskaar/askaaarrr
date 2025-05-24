@@ -369,16 +369,35 @@ nav {
 }
 
 .logo-image:hover {
-    transform: scale(1.05);
+transform: scale(1.05);
 }
 
 .logo-text {
-    text-align: right;
+text-align: center;
+}
+
+.logo-icon {
+color: #e74c3c;
+margin-right: 10px;
+transition: all 0.3s ease;
+}
+
+.animated-icon {
+display: inline-block;
+transform-origin: center;
+}
+
+.animated-icon:hover {
+transform: scale(1.2);
+color: #c0392b;
 }
 
 .logo-text h1 {
-    font-size: 2rem;
-    color: #333;
+font-size: 2rem;
+color: #333;
+margin: 0;
+font-weight: 700;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     margin: 0;
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -1364,6 +1383,63 @@ background: rgba(255, 245, 245, 0.9);
 
 .menu-item[data-drink]:hover i {
     transform: scale(1.2) rotate(10deg);
+}
+
+.menu-item[data-drink] i {
+    font-size: 2.8rem;
+    background: linear-gradient(45deg, #ff4d6a, #ff6b6b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.feature-item h4 {
+    font-size: 1.4rem;
+    color: #2d3436;
+    margin: 0 0 1rem 0;
+}
+
+.feature-item p {
+    color: #636e72;
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.hero-btn.primary {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.call-now-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.call-now-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.call-now-btn .phone-number {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.call-now-btn i {
+    font-size: 1.3rem;
 }
 
 .contact {
