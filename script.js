@@ -1,342 +1,239 @@
-// Back to top button functionality
-const backToTopButton = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('visible');
-    } else {
-        backToTopButton.classList.remove('visible');
-    }
-});
-
-backToTopButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    // تفعيل القائمة المتحركة
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.querySelector('i').classList.toggle('fa-bars');
-        menuToggle.querySelector('i').classList.toggle('fa-times');
-    });
-
-    // تفعيل جميع الروابط للتمرير السلس
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                // إضافة تأثير حركي عند النقر على الزر
-                this.classList.add('clicked');
-                setTimeout(() => this.classList.remove('clicked'), 200);
-
-                // التمرير السلس إلى القسم
-                targetSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-
-                // إغلاق القائمة المتحركة عند النقر على رابط
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    menuToggle.querySelector('i').classList.add('fa-bars');
-                    menuToggle.querySelector('i').classList.remove('fa-times');
-                }
-            }
-        });
-    });
-
-    // إغلاق القائمة عند النقر خارجها
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && 
-            !e.target.closest('.nav-links') && 
-            !e.target.closest('.menu-toggle') && 
-            navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            menuToggle.querySelector('i').classList.add('fa-bars');
-            menuToggle.querySelector('i').classList.remove('fa-times');
-        }
-    });
-});
-
-// Add scroll event listener for header
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-    } else {
-        header.style.backgroundColor = '#fff';
-    }
-});
-
-// Modal functionality for menu images
-const modal = document.getElementById('imageModal');
-const modalImg = document.getElementById('modalImage');
-const closeModal = document.querySelector('.close-modal');
-
-// Add click event to all menu images
-document.querySelectorAll('.menu-image-item img').forEach(img => {
-    img.addEventListener('click', function() {
-        modal.style.display = 'block';
-        modalImg.src = this.src;
-    });
-});
-
-// Close modal when clicking the X
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-// Close modal when clicking outside the image
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'block') {
-        modal.style.display = 'none';
-    }
-    if (e.key === 'Escape' && cartModal.style.display === 'block') {
-        cartModal.style.display = 'none';
-    }
-});
-
-// Shopping Cart Functionality
-let cart = [];
-const cartIcon = document.querySelector('.cart-icon');
-const cartCount = document.querySelector('.cart-count');
-const cartModal = document.getElementById('cartModal');
-const cartItems = document.getElementById('cartItems');
-const totalPrice = document.getElementById('totalPrice');
-const closeCartModal = cartModal.querySelector('.close-modal');
-
-// Add to Cart functionality
-document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const menuItem = this.closest('.menu-item');
-        const name = menuItem.querySelector('h4').textContent;
-        const selectedSize = menuItem.querySelector('.size-btn.selected');
-        
-        if (!selectedSize) {
-            alert('الرجاء اختيار الحجم');
-            return;
-        }
-        
-        const size = selectedSize.getAttribute('data-size');
-        const price = parseInt(selectedSize.textContent.match(/\d+/)[0]);
-        
-        // Check if this is a custom flavor item
-        const flavorInput = menuItem.querySelector('.flavor-input');
-        let customFlavor = '';
-        
-        if (flavorInput) {
-            customFlavor = flavorInput.value.trim();
-            if (customFlavor === '') {
-                alert('الرجاء كتابة الطعم المطلوب');
-                return;
-            }
-        }
-        
-        cart.push({ name, size, price, customFlavor });
-        updateCart();
-        
-        // Clear the flavor input if it exists
-        if (flavorInput) {
-            flavorInput.value = '';
-        }
-        
-        // Show success message
-        alert('تم إضافة ' + name + ' إلى السلة');
-        
-        // Animation effect
-        this.innerHTML = '<i class="fas fa-check"></i> تم الإضافة';
-        setTimeout(() => {
-            this.innerHTML = '<i class="fas fa-cart-plus"></i> أضف للسلة';
-        }, 1500);
-    });
-});
-
-// Size selection
-document.querySelectorAll('.size-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const menuItem = this.closest('.menu-item');
-        menuItem.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
-        this.classList.add('selected');
-    });
-});
-
-// Cart icon click
-cartIcon.addEventListener('click', (e) => {
-    e.preventDefault();
-    cartModal.style.display = 'block';
-});
-
-// Close cart modal
-closeCartModal.addEventListener('click', () => {
-    cartModal.style.display = 'none';
-});
-
-// Update cart display
-function updateCart() {
-    cartCount.textContent = cart.length;
-    cartItems.innerHTML = '';
-    let total = 0;
-
-    cart.forEach((item, index) => {
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <div class="cart-item-info">
-                <h4>${item.name}</h4>
-                <p>الحجم: ${getSizeInArabic(item.size)}</p>
-                ${item.customFlavor ? `<p>الطعم: ${item.customFlavor}</p>` : ''}
-            </div>
-            <div class="cart-item-price">
-                ${item.price} ج.م
-                <button onclick="removeFromCart(${index})" class="remove-item">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        `;
-        cartItems.appendChild(cartItem);
-        total += item.price;
-    });
-
-    totalPrice.textContent = total;
-}
-
-// Remove item from cart
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
-// Convert size to Arabic
-function getSizeInArabic(size) {
-    const sizes = {
-        'small': 'صغير',
-        'medium': 'وسط',
-        'large': 'كبير'
-    };
-    return sizes[size];
-}
-
-// تحديث قسم العنوان عند تغيير نوع الطلب
-document.querySelectorAll('input[name="orderType"]').forEach(radio => {
-    radio.addEventListener('change', function() {
-        const addressSection = document.getElementById('addressSection');
-        if (this.value === 'delivery') {
-            addressSection.style.display = 'block';
-        } else {
-            addressSection.style.display = 'none';
-        }
-    });
-});
-
-// إضافة الموقع الحالي
-document.getElementById('locationBtn').addEventListener('click', () => {
+// Get user's location
+function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
-                
-                // تحديث حقل العنوان مع إحداثيات الموقع
-                const locationLink = `https://maps.google.com/?q=${latitude},${longitude}`;
-                document.getElementById('customerAddress').value += `\n\nرابط الموقع: ${locationLink}`;
-                
-                // إظهار رسالة النجاح
-                document.getElementById('locationInfo').style.display = 'flex';
-                setTimeout(() => {
-                    document.getElementById('locationInfo').style.display = 'none';
-                }, 3000);
+                document.getElementById('location').value = `${latitude}, ${longitude}`;
+                // Add the location to the address field
+                const locationLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                const currentAddress = document.getElementById('address').value;
+                document.getElementById('address').value = currentAddress + 
+                    (currentAddress ? '\n' : '') + 
+                    `رابط الموقع: ${locationLink}`;
             },
             (error) => {
-                alert('عذراً، لم نتمكن من تحديد موقعك. الرجاء كتابة العنوان يدوياً.');
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert('من فضلك اسمح للموقع بتحديد مكانك');
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert('معلومات الموقع غير متوفرة');
+                        break;
+                    case error.TIMEOUT:
+                        alert('انتهت مهلة طلب تحديد الموقع');
+                        break;
+                    default:
+                        alert('حدث خطأ غير معروف');
+                        break;
+                }
             }
         );
     } else {
-        alert('عذراً، متصفحك لا يدعم تحديد المواقع.');
+        alert('متصفحك لا يدعم تحديد الموقع');
     }
-});
+}
 
-// WhatsApp order
-document.getElementById('whatsappOrder').addEventListener('click', () => {
+function sendOrder(event) {
+    event.preventDefault();
+    
+    const fullName = document.getElementById('fullName').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const orderDetails = document.getElementById('orderDetails').value;
+    const location = document.getElementById('location').value;
+    const complaints = document.getElementById('complaints').value;
+
+    if (!fullName || !phone || !address || !orderDetails) {
+        alert('من فضلك أكمل كل البيانات');
+        return false;
+    }
+
+    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+    const paymentIcon = paymentMethod === 'cash' ? '💵' : '💳';
+    const paymentText = paymentMethod === 'cash' ? 'كاش' : 'محفظة إلكترونية';
+
+    const message = `شركه ال عسكر للنقل والشحن  ⚡️
+` +
+        `--------------------------------
+` +
+        `طلب جديد 📦
+` +
+        `--------------------------------
+` +
+        `👤 الاسم: ${fullName}
+` +
+        `📱 رقم الهاتف: ${phone}
+` +
+        `📍 *مكان التسليم:* ${address}
+` +
+        (location ? `📌 مكان الاستلام: ${location}\n` : '') +
+        `${paymentIcon} طريقة الدفع: ${paymentText}\n` +
+        `--------------------------------
+` +
+        `🛒 تفاصيل :
+${orderDetails}\n` +
+        `--------------------------------
+` +
+        (complaints ? `📝 الشكاوى والملاحظات:
+${complaints}\n` + `--------------------------------
+` : '') +
+        `🕒 *وقت الطلب:* ${new Date().toLocaleString('ar-EG')}
+` +
+        `--------------------------------\n` +
+        `شكراً لاختياركنا! 🙏`;
+
+    alert('تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً 🚀');
+
+    document.getElementById('fullName').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('orderDetails').value = '';
+    document.getElementById('location').value = '';
+    document.getElementById('complaints').value = '';
+    document.querySelector('input[name="paymentMethod"]:checked').checked = false;
+
+    window.location.href = `https://wa.me/201117389344?text=${encodeURIComponent(message)}`;
+    return false;
+}
+
+// Submit order
+function submitOrder() {
+    const fullName = document.getElementById('fullName').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const orderDetails = document.getElementById('orderDetails').value;
+    const notes = document.getElementById('notes').value;
+
+    if (!fullName || !phone || !address || !orderDetails) {
+        alert('من فضلك أكمل كل البيانات المطلوبة');
+        return;
+    }
+
+    // Format the order message
+    const message = `🛍️ *طلب جديد*\n\n` +
+        `👤 *الاسم:* ${fullName}\n` +
+        `📱 *رقم الهاتف:* ${phone}\n` +
+        `📍 *مكان التسليم:* ${address}\n\n` +
+        `🛒 *تفاصيل الطلب:*\n${orderDetails}\n\n` +
+        (notes ? `📝 *ملاحظات إضافية:*\n${notes}\n\n` : '') +
+        `\n🕒 *وقت الطلب:* ${new Date().toLocaleString('ar-EG')}`;
+
+    // Save order to local storage
+    saveOrder({
+        fullName,
+        phone,
+        address,
+        orderDetails,
+        notes,
+        timestamp: new Date().toLocaleString()
+    });
+
+    // فتح الواتساب مباشرة مع الرسالة
+    const whatsappUrl = `https://wa.me/201117389344?text=${encodeURIComponent(message)}`;
+    window.location.href = whatsappUrl;
+
+    // Clear the form
+    clearForm();
+}
+
+// Save order to local storage
+function saveOrder(order) {
+    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+    orders.push(order);
+    localStorage.setItem('orders', JSON.stringify(orders));
+}
+
+// Clear the form after submission
+function clearForm() {
+    document.getElementById('fullName').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('orderDetails').value = '';
+    document.getElementById('notes').value = '';
+}
+
+// Save user name
+function saveUserName() {
+    const userName = document.getElementById('userName').value;
+    if (userName.trim()) {
+        localStorage.setItem('userName', userName);
+        currentUser = userName;
+        checkUser();
+        updateUserInfo();
+        
+        // Log user activity
+        const timestamp = new Date().toLocaleString();
+        const userActivity = JSON.parse(localStorage.getItem('userActivity') || '[]');
+        userActivity.push({ user: userName, timestamp: timestamp });
+        localStorage.setItem('userActivity', JSON.stringify(userActivity));
+    }
+}
+
+// Check if user is logged in
+function checkUser() {
+    const loginSection = document.getElementById('loginSection');
+    if (currentUser) {
+        loginSection.style.display = 'none';
+    } else {
+        loginSection.style.display = 'block';
+    }
+}
+
+// Update user info display
+function updateUserInfo() {
+    const userInfo = document.getElementById('userInfo');
+    if (currentUser) {
+        userInfo.innerHTML = `أهلاً ${currentUser} | <button onclick="logout()">تسجيل خروج</button>`;
+    } else {
+        userInfo.innerHTML = '';
+    }
+}
+
+// Logout function
+function logout() {
+    localStorage.removeItem('userName');
+    currentUser = null;
+    cart = [];
+    updateCart();
+    checkUser();
+    updateUserInfo();
+}
+
+// Submit order
+function submitOrder() {
     if (cart.length === 0) {
         alert('السلة فارغة');
         return;
     }
 
-    const selectedOrderType = document.querySelector('input[name="orderType"]:checked');
-    if (!selectedOrderType) {
-        alert('الرجاء اختيار نوع الطلب');
-        return;
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    const orderDetails = cart.map(item => item.name).join('\n');
+    const message = `طلب جديد من: ${currentUser}\n\nالطلبات:\n${orderDetails}\n\nالمجموع: ${total} جنيه`;
+    
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/201117389344?text=${encodeURIComponent(message)}`, '_blank');
+    
+    // Clear cart after order
+    cart = [];
+    updateCart();
+}
+
+// Initialize the page when loaded
+window.onload = init;
+
+// Add scroll effect for navigation
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+        nav.style.transform = 'translateY(0)';
+    } else {
+        nav.style.transform = 'translateY(-100%)';
     }
-
-    // التحقق من العنوان إذا كان التوصيل للمنزل
-    if (selectedOrderType.value === 'delivery') {
-        const address = document.getElementById('customerAddress').value.trim();
-        if (!address) {
-            alert('الرجاء إدخال عنوان التوصيل');
-            return;
-        }
-    }
-
-    const orderTypeText = {
-        'delivery': 'توصيل للمنزل',
-        'dineIn': 'تناول في الصالة',
-        'pickup': 'استلام من المطعم'
-    }[selectedOrderType.value];
-
-    let message = `طلب جديد (${orderTypeText}):\n\n`;
-    let total = 0;
-
-    cart.forEach(item => {
-        let itemDetails = `${item.name} (${getSizeInArabic(item.size)})`;
-        if (item.customFlavor) {
-            itemDetails += ` - الطعم: ${item.customFlavor}`;
-        }
-        message += `${itemDetails} - ${item.price} ج.م\n`;
-        total += item.price;
-    });
-
-    // إضافة العنوان إذا كان التوصيل للمنزل
-    if (selectedOrderType.value === 'delivery') {
-        const address = document.getElementById('customerAddress').value.trim();
-        message += `\nعنوان التوصيل:\n${address}`;
-    }
-
-    const notes = document.getElementById('orderNotes').value.trim();
-    if (notes) {
-        message += `\nملاحظات: ${notes}`;
-    }
-
-    message += `\nالمجموع: ${total} ج.م`;
-
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/201003410708?text=${encodedMessage}`, '_blank');
 });
+
+// Add smooth transition
+document.querySelector('nav').style.transition = 'transform 0.3s ease-in-out';
