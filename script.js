@@ -1,21 +1,172 @@
+// Show toast notification
+function showToast(message, duration = 3000) {
+    let toast = document.querySelector('.toast');
+    
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.className = 'toast';
+        document.body.appendChild(toast);
+    }
+    
+    toast.textContent = message;
+    toast.classList.add('show');
+    
+    // Hide after duration
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, duration);
+}
+
+// حماية الموقع من النسخ والسرقة
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    showToast('هذا الإجراء غير مسموح به', 2000);
+    return false;
+});
+
+// منع اختصارات لوحة المفاتيح
+const blockedKeys = [67, 85, 73, 83]; // c, u, i, s
+const blockedKeyCombinations = [
+    { ctrl: true, key: 'u' },
+    { ctrl: true, key: 'U' },
+    { ctrl: true, shift: true, key: 'I' },
+    { ctrl: true, shift: true, key: 'i' },
+    { ctrl: true, key: 's' },
+    { ctrl: true, key: 'S' },
+    { meta: true, key: 'u' },
+    { meta: true, key: 'U' }
+];
+
+document.addEventListener('keydown', function(e) {
+    // منع F12 و Ctrl+Shift+I و Ctrl+Shift+J و Ctrl+Shift+C
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) ||
+        (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j'))
+    ) {
+        e.preventDefault();
+        showToast('عذراً، هذا الإجراء غير مسموح به', 2000);
+        return false;
+    }
+    
+    // منع النسخ والقص واللصق
+    if (e.ctrlKey || e.metaKey) {
+        if (['c', 'x', 'u', 's', 'C', 'X', 'U', 'S'].includes(e.key)) {
+            e.preventDefault();
+            return false;
+        }
+    }
+});
+
+// منع سحب الصور
+window.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// حماية إضافية للصور
+function protectImages() {
+    // منع فتح الصور في نافذة جديدة
+    document.addEventListener('click', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // إزالة خاصية src من الصور عند محاولة فحصها
+    const images = document.getElementsByTagName('img');
+    for (let img of images) {
+        const originalSrc = img.src;
+        img.setAttribute('data-original', originalSrc);
+        
+        // إضافة مستمع لحدث contextmenu
+        img.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // حماية إضافية للصور
+        img.style.pointerEvents = 'none';
+        img.style.userSelect = 'none';
+        img.style.webkitUserDrag = 'none';
+        img.style.MozUserSelect = 'none';
+        img.style.msUserSelect = 'none';
+    }
+}
+
+// Add touch event listeners for better mobile interaction
+document.addEventListener('DOMContentLoaded', function() {
+    // تشغيل حماية الصور
+    protectImages();
+    // Prevent zoom on double-tap
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    // Add touch feedback for buttons
+    const buttons = document.querySelectorAll('button, .btn, [role="button"]');
+    buttons.forEach(button => {
+        button.addEventListener('touchstart', function() {
+            this.classList.add('active');
+        });
+        button.addEventListener('touchend', function() {
+            this.classList.remove('active');
+        });
+    });
+});
+
 // Get user's location (pickup)
 function getLocation() {
+    const locationInput = document.getElementById('location');
+    locationInput.disabled = true;
+    
+    // Show loading state
+    const originalText = locationInput.placeholder;
+    locationInput.placeholder = 'جاري تحديد الموقع...';
+    
     if (navigator.geolocation) {
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        };
+        
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
-                document.getElementById('location').value = `${latitude}, ${longitude}`;
+                locationInput.value = `${latitude}, ${longitude}`;
                 const locationLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
                 const currentAddress = document.getElementById('address').value;
                 document.getElementById('address').value = currentAddress + 
                     (currentAddress ? '\n' : '') + 
                     `رابط الموقع: ${locationLink}`;
+                
+                // Revert loading state
+                locationInput.placeholder = originalText;
+                locationInput.disabled = false;
+                
+                // Show success message
+                showToast('تم تحديد الموقع بنجاح');
             },
-            handleLocationError
+            (error) => {
+                handleLocationError(error);
+                locationInput.placeholder = originalText;
+                locationInput.disabled = false;
+            },
+            options
         );
     } else {
-        alert('متصفحك لا يدعم تحديد الموقع');
+        showToast('متصفحك لا يدعم تحديد الموقع');
+        locationInput.placeholder = originalText;
+        locationInput.disabled = false;
     }
 }
 

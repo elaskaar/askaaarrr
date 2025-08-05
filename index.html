@@ -1,14 +1,64 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!-- 
+    ⚠️ تحذير: هذا الموقع محمي بحقوق الملكية الفكرية.
+    يُمنع نسخ أو تعديل أو توزيع أي جزء من هذا الموقع دون إذن كتابي مسبق.
+    جميع الحقوق محفوظة © 2025
+-->
+<html lang="ar" dir="rtl" oncontextmenu="return false" onkeydown="return disableInspect(event)">
 <head>
+    <!-- حماية إضافية لمنع الفحص -->
+    <script>
+    // منع فتح أدوات المطورين
+    function disableInspect(e) {
+        if(e.keyCode === 123 || // F12
+           (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I, J, C
+           (e.metaKey && e.altKey && (e.keyCode === 73 || e.keyCode === 74)) // Cmd+Option+I, J (for Mac)
+        ) {
+            e.preventDefault();
+            return false;
+        }
+    }
+    
+    // منع النقر الأيمن
+    document.oncontextmenu = function() {
+        return false;
+    };
+    
+    // منع النسخ
+    document.oncopy = function() {
+        return false;
+    };
+    
+    // منع القص
+    document.oncut = function() {
+        return false;
+    };
+    
+    // منع سحب وإفلات الصور
+    document.ondragstart = function() {
+        return false;
+    };
+    
+    // إعادة توجيه محاولات فتح أدوات المطورين
+    setInterval(function() {
+        if(window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
+            window.location.href = 'about:blank';
+        }
+    }, 1000);
+    </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>شركه ال عسكر للنقل والشحن  - خدمة توصيل سريعة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>شركه ال عسكر للنقل والشحن - خدمة توصيل سريعة</title>
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="عسكر للنقل">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="HandheldFriendly" content="true">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 </head>
 <body>
     <nav>
@@ -40,9 +90,9 @@
     </div>
 
     <div class="order-details-section">
-        <div class="arabic-car-image-container" style="text-align: center; margin-bottom: 20px;">
-            <div class="arabic-car-image">
-                <img src="عربيه.jpg" alt="سيارة" style="max-width: 100%; height: auto; border-radius: 10px;">
+        <div class="arabic-car-image-container" style="text-align: center; margin: 10px 0 20px;">
+            <div class="arabic-car-image" style="max-width: 100%;">
+                <img src="عربيه.jpg" alt="سيارة" style="max-width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
             </div>
         </div>
         <h2>طلب جديد</h2>
