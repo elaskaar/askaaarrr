@@ -1,4 +1,4 @@
-// Get user's location
+// Get user's location (pickup)
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -6,32 +6,55 @@ function getLocation() {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
                 document.getElementById('location').value = `${latitude}, ${longitude}`;
-                // Add the location to the address field
                 const locationLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
                 const currentAddress = document.getElementById('address').value;
                 document.getElementById('address').value = currentAddress + 
                     (currentAddress ? '\n' : '') + 
                     `رابط الموقع: ${locationLink}`;
             },
-            (error) => {
-                switch(error.code) {
-                    case error.PERMISSION_DENIED:
-                        alert('من فضلك اسمح للموقع بتحديد مكانك');
-                        break;
-                    case error.POSITION_UNAVAILABLE:
-                        alert('معلومات الموقع غير متوفرة');
-                        break;
-                    case error.TIMEOUT:
-                        alert('انتهت مهلة طلب تحديد الموقع');
-                        break;
-                    default:
-                        alert('حدث خطأ غير معروف');
-                        break;
-                }
-            }
+            handleLocationError
         );
     } else {
         alert('متصفحك لا يدعم تحديد الموقع');
+    }
+}
+
+// Get delivery location
+function getDeliveryLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                document.getElementById('deliveryLocation').value = `${latitude}, ${longitude}`;
+                const locationLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                const currentAddress = document.getElementById('address').value;
+                document.getElementById('address').value = currentAddress + 
+                    (currentAddress ? '\n' : '') + 
+                    `رابط موقع التسليم: ${locationLink}`;
+            },
+            handleLocationError
+        );
+    } else {
+        alert('متصفحك لا يدعم تحديد الموقع');
+    }
+}
+
+// Handle location errors
+function handleLocationError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert('من فضلك اسمح للموقع بتحديد مكانك');
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert('معلومات الموقع غير متوفرة');
+            break;
+        case error.TIMEOUT:
+            alert('انتهت مهلة طلب تحديد الموقع');
+            break;
+        default:
+            alert('حدث خطأ غير معروف');
+            break;
     }
 }
 
@@ -43,6 +66,7 @@ function sendOrder(event) {
     const address = document.getElementById('address').value;
     const orderDetails = document.getElementById('orderDetails').value;
     const location = document.getElementById('location').value;
+    const deliveryLocation = document.getElementById('deliveryLocation').value;
     const complaints = document.getElementById('complaints').value;
 
     if (!fullName || !phone || !address || !orderDetails) {
@@ -68,6 +92,7 @@ function sendOrder(event) {
 ` +
         `📍 *مكان التسليم:* ${address}
 ` +
+        (deliveryLocation ? `📌 موقع التسليم على الخريطة: ${deliveryLocation}\n` : '') +
         (location ? `📌 مكان الاستلام: ${location}\n` : '') +
         `${paymentIcon} طريقة الدفع: ${paymentText}\n` +
         `--------------------------------

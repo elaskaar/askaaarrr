@@ -23,9 +23,28 @@
         </div>
     </div>
 
-
+    <div class="image-slider">
+        <div class="slider-container">
+            <img src="a.jpg" alt="Image A" class="slider-image">
+            <img src="s.jpg" alt="Image S" class="slider-image">
+            <img src="d.jpg" alt="Image D" class="slider-image">
+            <img src="f.jpg" alt="Image F" class="slider-image">
+            <img src="g.jpg" alt="Image G" class="slider-image">
+            <!-- Duplicate images for seamless looping -->
+            <img src="a.jpg" alt="Image A" class="slider-image">
+            <img src="s.jpg" alt="Image S" class="slider-image">
+            <img src="d.jpg" alt="Image D" class="slider-image">
+            <img src="f.jpg" alt="Image F" class="slider-image">
+            <img src="g.jpg" alt="Image G" class="slider-image">
+        </div>
+    </div>
 
     <div class="order-details-section">
+        <div class="arabic-car-image-container" style="text-align: center; margin-bottom: 20px;">
+            <div class="arabic-car-image">
+                <img src="عربيه.jpg" alt="سيارة" style="max-width: 100%; height: auto; border-radius: 10px;">
+            </div>
+        </div>
         <h2>طلب جديد</h2>
         <div class="order-form">
             <div class="form-group">
@@ -37,18 +56,26 @@
                 <input type="tel" id="phone" placeholder="اكتب رقم هاتفك">
             </div>
             <div class="form-group">
-                <label>مكان التسليم</label>
+                <label>موقع الاستلام</label>
                 <textarea id="address" placeholder="مكان التسليم ب التفصيل"></textarea>
             </div>
             <div class="form-group">
-                <label>مكان الاستلام</label>
+                <label>موقع التسليم</label>
                 <div class="location-input">
-                    <input type="text" id="location" placeholder="حدد موقعك" readonly>
-                    <button type="button" onclick="getLocation()" class="location-btn">
+                    <input type="text" id="deliveryLocation" placeholder="حدد موقع التسليم" readonly>
+                    <button type="button" onclick="getDeliveryLocation()" class="location-btn">
                         <i class="fas fa-map-marker-alt"></i>
                     </button>
                 </div>
             </div>
+            <div class="form-group">
+                <label>مكان الاستلام</label>
+                <div class="location-input">
+                    <input type="text" id="location" placeholder="حدد موقع الاستلام" readonly>
+                    <button type="button" onclick="getLocation()" class="location-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                </div>
             <div class="form-group">
                 <label>نوع المنقولات</label>
                 <textarea id="orderDetails" placeholder="تفاصيل"></textarea>
@@ -85,7 +112,7 @@
             <a href="https://wa.me/201117389344" class="social-btn whatsapp" aria-label="واتساب">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61577252675385&mibextid=wwXIfr&mibextid=wwXIfr" class="social-btn facebook" aria-label="فيسبوك" target="_blank">
+            <a href="https://www.facebook.com/profile.php?id=61556779915842&mibextid=ZbWKwL" class="social-btn facebook" aria-label="فيسبوك" target="_blank">
                 <i class="fab fa-facebook-f"></i>
             </a>
             <a href="https://www.instagram.com/mahmoudmtotti?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-btn instagram" aria-label="انستجرام" target="_blank">
