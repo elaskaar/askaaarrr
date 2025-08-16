@@ -122,73 +122,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Get user's location (pickup)
+// Function to get current location (kept for reference, not used in the form anymore)
 function getLocation() {
-    const locationInput = document.getElementById('location');
-    locationInput.disabled = true;
-    
-    // Show loading state
-    const originalText = locationInput.placeholder;
-    locationInput.placeholder = 'جاري تحديد الموقع...';
-    
     if (navigator.geolocation) {
-        const options = {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 0
-        };
-        
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
-                locationInput.value = `${latitude}, ${longitude}`;
                 const locationLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
-                const currentAddress = document.getElementById('address').value;
-                document.getElementById('address').value = currentAddress + 
-                    (currentAddress ? '\n' : '') + 
-                    `رابط الموقع: ${locationLink}`;
-                
-                // Revert loading state
-                locationInput.placeholder = originalText;
-                locationInput.disabled = false;
-                
-                // Show success message
-                showToast('تم تحديد الموقع بنجاح');
+                return locationLink;
             },
             (error) => {
-                handleLocationError(error);
-                locationInput.placeholder = originalText;
-                locationInput.disabled = false;
-            },
-            options
+                console.error('Error getting location:', error);
+                return null;
+            }
         );
-    } else {
-        showToast('متصفحك لا يدعم تحديد الموقع');
-        locationInput.placeholder = originalText;
-        locationInput.disabled = false;
     }
-}
-
-// Get delivery location
-function getDeliveryLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                document.getElementById('deliveryLocation').value = `${latitude}, ${longitude}`;
-                const locationLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
-                const currentAddress = document.getElementById('address').value;
-                document.getElementById('address').value = currentAddress + 
-                    (currentAddress ? '\n' : '') + 
-                    `رابط موقع التسليم: ${locationLink}`;
-            },
-            handleLocationError
-        );
-    } else {
-        alert('متصفحك لا يدعم تحديد الموقع');
-    }
+    return null;
 }
 
 // Handle location errors
@@ -214,14 +164,13 @@ function sendOrder(event) {
     
     const fullName = document.getElementById('fullName').value;
     const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
+    const pickupAddress = document.getElementById('pickupAddress').value;
+    const deliveryAddress = document.getElementById('deliveryAddress').value;
     const orderDetails = document.getElementById('orderDetails').value;
-    const location = document.getElementById('location').value;
-    const deliveryLocation = document.getElementById('deliveryLocation').value;
     const complaints = document.getElementById('complaints').value;
 
-    if (!fullName || !phone || !address || !orderDetails) {
-        alert('من فضلك أكمل كل البيانات');
+    if (!fullName || !phone || !pickupAddress || !deliveryAddress || !orderDetails) {
+        alert('من فضلك أكمل كل البيانات المطلوبة');
         return false;
     }
 
@@ -241,10 +190,10 @@ function sendOrder(event) {
 ` +
         `📱 رقم الهاتف: ${phone}
 ` +
-        `📍 *مكان التسليم:* ${address}
+        `📍 *عنوان الاستلام:* ${pickupAddress}
 ` +
-        (deliveryLocation ? `📌 موقع التسليم على الخريطة: ${deliveryLocation}\n` : '') +
-        (location ? `📌 مكان الاستلام: ${location}\n` : '') +
+        `📍 *عنوان التسليم:* ${deliveryAddress}
+` +
         `${paymentIcon} طريقة الدفع: ${paymentText}\n` +
         `--------------------------------
 ` +
@@ -264,9 +213,9 @@ ${complaints}\n` + `--------------------------------
 
     document.getElementById('fullName').value = '';
     document.getElementById('phone').value = '';
-    document.getElementById('address').value = '';
+    document.getElementById('pickupAddress').value = '';
+    document.getElementById('deliveryAddress').value = '';
     document.getElementById('orderDetails').value = '';
-    document.getElementById('location').value = '';
     document.getElementById('complaints').value = '';
     document.querySelector('input[name="paymentMethod"]:checked').checked = false;
 

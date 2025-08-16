@@ -106,26 +106,13 @@
                 <input type="tel" id="phone" placeholder="اكتب رقم هاتفك">
             </div>
             <div class="form-group">
-                <label>موقع الاستلام</label>
-                <textarea id="address" placeholder="مكان التسليم ب التفصيل"></textarea>
+                <label>عنوان الاستلام</label>
+                <input type="text" id="pickupAddress" placeholder="اكتب عنوان الاستلام بالتفصيل">
             </div>
             <div class="form-group">
-                <label>موقع التسليم</label>
-                <div class="location-input">
-                    <input type="text" id="deliveryLocation" placeholder="حدد موقع التسليم" readonly>
-                    <button type="button" onclick="getDeliveryLocation()" class="location-btn">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                </div>
+                <label>عنوان التسليم</label>
+                <input type="text" id="deliveryAddress" placeholder="اكتب عنوان التسليم بالتفصيل">
             </div>
-            <div class="form-group">
-                <label>مكان الاستلام</label>
-                <div class="location-input">
-                    <input type="text" id="location" placeholder="حدد موقع الاستلام" readonly>
-                    <button type="button" onclick="getLocation()" class="location-btn">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </button>
-                </div>
             <div class="form-group">
                 <label>نوع المنقولات</label>
                 <textarea id="orderDetails" placeholder="تفاصيل"></textarea>
